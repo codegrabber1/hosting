@@ -2151,6 +2151,25 @@ div.jp-audio {
   display: none;
 
 }
+.btn, .btn:visited {
+  background: #1e1e1e;
+  border: 0 none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: #333;
+  line-height: 22px;
+  outline: none;
+  padding: 9px 20px;
+  text-shadow: none;
+  filter: none;
+  -webkit-transition: background .2s linear, color .2s linear;
+  transition: background .2s linear, color .2s linear;
+  white-space: normal;
+}
 
 .ladda-button {
 
@@ -2415,5 +2434,175 @@ blockquote.no-border {
 blockquote small {
 
   line-height: 26px;
+
+}
+/******************************************************************************
+
+  Hover Effects
+
+*******************************************************************************/
+
+
+.team-member .social-icon .item a,
+.team-member:hover .social-icon .item a:hover,
+.work-process-box:hover .title,
+.work-process-box .title,
+.pricing:hover .title a,
+.pricing .title a,
+.share-active i,
+.share-active i:hover,
+.footer-social i:hover,
+.footer-social i,
+.sidebar .newsletter .submit.bg-color:hover,
+.sidebar .newsletter .submit.bg-color,
+.header .primary .sub a:hover,
+.header .primary .sub a,
+.header-icons i,
+.header-icons i:hover,
+.post .entry-title a:hover,
+.post .entry-title a,
+.service-box a:hover,
+.service-box a,
+.service:hover i,
+.service i,
+.rotate:hover i,
+.zoom:hover i,
+.get-a-quote:hover a,
+.get-a-quote a,
+.timeliner > li:hover .timeline-image,
+.timeliner > li .timeline-image,
+.timeliner li:hover .timeline-heading h4,
+.timeliner li .timeline-heading h4,
+.opacity:hover img,
+.opacity img,
+.features-list li i,
+.features-list li:hover i,
+.shop .product-item:hover .product-overlay,
+.shop .product-item .product-overlay,
+.shop .product-item img,
+.shop .product-item:hover img {
+
+  transition: all 350ms ease-in-out 0s;
+
+  -moz-transition: all 350ms ease-in-out 0s;
+
+  -webkit-transition: all 350ms ease-in-out 0s;
+
+  -o-transition: all 350ms ease-in-out 0s;
+
+  -ms-transition: all 350ms ease-in-out 0s;
+
+}
+
+
+/* Hover Zoom Effects */
+
+.zoom:hover i {
+
+  transform: scale(1.1);
+
+  -moz-transform: scale(1.1);
+
+  -webkit-transform: scale(1.1);
+
+  -o-transform: scale(1.1);
+
+  -ms-transform: scale(1.1);
+
+}
+
+
+/* Hover Rotate Effects */
+
+.rotate:hover i {
+
+  transform: rotate(360deg);
+
+  -ms-transform: rotate(360deg);
+
+  -webkit-transform: rotate(360deg);
+
+}
+
+
+/* Endless Rotating */
+
+
+@-webkit-keyframes rotating /* Safari and Chrome */
+{
+
+  from {
+
+    -ms-transform: rotate(0deg);
+
+    -moz-transform: rotate(0deg);
+
+    -webkit-transform: rotate(0deg);
+
+    -o-transform: rotate(0deg);
+
+    transform: rotate(0deg);
+
+  }
+
+  to {
+
+    -ms-transform: rotate(360deg);
+
+    -moz-transform: rotate(360deg);
+
+    -webkit-transform: rotate(360deg);
+
+    -o-transform: rotate(360deg);
+
+    transform: rotate(360deg);
+
+  }
+
+}
+
+@keyframes rotating {
+
+  from {
+
+    -ms-transform: rotate(0deg);
+
+    -moz-transform: rotate(0deg);
+
+    -webkit-transform: rotate(0deg);
+
+    -o-transform: rotate(0deg);
+
+    transform: rotate(0deg);
+
+  }
+
+  to {
+
+    -ms-transform: rotate(360deg);
+
+    -moz-transform: rotate(360deg);
+
+    -webkit-transform: rotate(360deg);
+
+    -o-transform: rotate(360deg);
+
+    transform: rotate(360deg);
+
+  }
+
+}
+
+.rotating {
+
+  -webkit-animation: rotating 2s linear infinite;
+
+  -moz-animation: rotating 2s linear infinite;
+
+  -ms-animation: rotating 2s linear infinite;
+
+  -o-animation: rotating 2s linear infinite;
+
+  animation: rotating 2s linear infinite;
 
 }

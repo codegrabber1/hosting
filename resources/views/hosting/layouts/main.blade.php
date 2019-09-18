@@ -160,7 +160,8 @@
             <!-- .header -->
             <div id="main">
                 @yield('slider')
-                @yield('content')
+                @yield('pricing')
+                @yield('latest')
             </div>
         </div><!-- .page-box-content -->
         @yield('footer')
