@@ -1,11 +1,14 @@
 <!doctype html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="keywords" content="">
         <meta name="description" content="">
         <meta class="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- Font -->
         <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Arimo:300,400,700,400italic,700italic'>
@@ -38,7 +41,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <title>{{ asset(env('APP_NAME')) }}</title>
+        <title>{{ config('app.name') }}</title>
 
     </head>
     <body class="fixed-header home">
@@ -93,29 +96,31 @@
                                         </button>
                                         <ul class="collapse navbar-collapse nav navbar-nav navbar-center">
                                             <li class="parent megamenu four-columns">
-                                                <a href="index.html">Home</a>
+                                                <a href="{{ url('./') }}">Home</a>
 
                                                 <!-- .sub -->
                                             </li>
-
                                             <li class="parent">
-                                                <a href="portfolio-grid-3.html">Portfolio</a>
+                                                <a href="portfolio-grid-3.html">Support</a>
                                                 <ul class="sub">
                                                     <li class="parent">
                                                         <a href="#">Grid</a>
-                                                        <ul class="sub">
-                                                            <li><a href="portfolio-grid-2.html">2 Column</a></li>
-                                                            <li><a href="portfolio-grid-3.html">3 Column</a></li>
-                                                            <li><a href="portfolio-grid-4.html">4 Column</a></li>
-                                                        </ul>
+                                                        <a href="portfolio-grid-2.html">Working time</a>
+                                                        <a href="portfolio-grid-3.html">FAQ</a>
+                                                        <a href="portfolio-grid-4.html">4 Column</a>
                                                     </li>
-
                                                 </ul>
                                             </li>
 
                                             <li class="parent">
-                                                <a href="time-line-right-sidebar.html">Blog</a>
+                                                <a href="{{ url('blog') }}">Blog</a>
 
+                                            </li>
+                                            <li class="parent">
+                                                <a href="contact.html">Servers</a>
+                                            </li>
+                                            <li class="parent">
+                                                <a href="contact.html">Partnership</a>
                                             </li>
                                             <li class="parent">
                                                 <a href="contact.html">Contact</a>
@@ -162,9 +167,12 @@
                 @yield('slider')
                 @yield('pricing')
                 @yield('latest')
+                @yield('content')
+                @yield('sidebar')
             </div>
+            @yield('footer')
         </div><!-- .page-box-content -->
-        @yield('footer')
+
     </div><!-- .page-box -->
     <!-- .page-box -->
     <div class="clearfix"></div>

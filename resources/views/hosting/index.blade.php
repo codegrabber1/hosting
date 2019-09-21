@@ -25,9 +25,9 @@
 @stop
 @section('pricing')
     <section id="pricing" class="full-width-box">
-{{--        <div class="fwb-bg fwb-fixed no-bg">--}}
-{{--            <div class="overlay"></div>--}}
-{{--        </div>--}}
+        <div class="fwb-bg fwb-fixed no-bg">
+            <div class="overlay"></div>
+        </div>
         <div class="container">
             <div class="row text-center">
                 <div class="col-sm-12 col-md-12">
@@ -291,5 +291,5 @@
     </section> <!-- #Latest posts -->
 @stop
 @section('footer')
-
+    @include('hosting.footer')
 @stop

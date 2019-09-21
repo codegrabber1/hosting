@@ -1,0 +1,36 @@
+#footer .footer-top {
+  background: #f2f2f2;
+  font-size: 12px;
+  line-height: 21px;
+  padding: 50px 0 13px;
+}
+#footer .footer-bottom {
+  background: #f7f7f7;
+  border-top-width: 1px;
+  font-size: 11px;
+  line-height: 17px;
+  padding: 21px 0 20px;
+}
+.footer-blog li {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px dashed #c2c0c0;
+}
+#footer .up {
+  background: #c6c6c6;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  display: block;
+  float: right;
+  height: 40px;
+  text-align: center;
+  width: 40px;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+#footer .up .glyphicon {
+  color: #fff;
+  margin: 14px 0 0 -.5px;
+  vertical-align: top;
+}

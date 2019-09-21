@@ -65,6 +65,10 @@ body{
 body.loaded{
   overflow-x: inherit;
 }
+.home #main {
+  padding-top: 0;
+  padding-bottom: 0;
+}
 .scroll-width {
   height: 150px;
   left: 0;
@@ -252,7 +256,7 @@ hr {
 
 .no-top-margin {
 
-  top-bottom: 0;
+  margin-top: 0;
 
 }
 
@@ -1431,7 +1435,7 @@ audio .mist {
 
   right: 0;
 
-  margin: 0px auto;
+  margin: 0 auto;
 
   z-index: 99;
 
@@ -2605,4 +2609,77 @@ blockquote small {
 
   animation: rotating 2s linear infinite;
 
+}
+.title-box {
+  border-bottom-width: 0;
+  margin-bottom: 40px;
+  position: relative;
+}
+.title-box h2:before {
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0;
+  margin: -2px auto;
+  position: absolute;
+  width: 40px;
+}
+/******************************************************************************
+
+  MAIN SECTION
+
+*******************************************************************************/
+
+#main {
+
+  padding: 80px 0;
+
+}
+
+#main.no-padding {
+
+  padding: 0;
+
+}
+
+#main.no-bottom-padding {
+
+  padding-bottom: 0;
+
+}
+
+#main.bottom-padding-40 {
+
+  padding-bottom: 40px;
+
+}
+.sidebar .widget .title-block, .product-bottom .related-products header {
+  border-bottom: 1px solid #e1e1e1;
+  margin: 0 0 20px;
+  padding: 0 0 15px;
+  position: relative;
+}
+#footer .sidebar .widget header, #footer .sidebar .widget .title-block {
+  margin: 0 0 15px;
+  padding: 0 0 12px;
+}
+#footer .sidebar .widget header .title, #footer .sidebar .widget .title-block .title {
+  color: #1e1e1e;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+.sidebar .widget ol, .sidebar .widget ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+.sidebar .widget header .title, .sidebar .widget .title-block .title, .product-bottom .related-products header h3 {
+  color: #7f7f7f;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0;
 }
