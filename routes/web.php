@@ -21,3 +21,28 @@ Route::get('/blog', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Admin.Blog.
+Route::get('admin/blog/dashboard', 'Admin\Blog\DashboardController@index')->name('admin.blog.dashboard');
+
+$groupData = [
+    'namespace' => 'Admin\Blog',
+    'prefix' => 'admin/blog',
+    'middleware' => 'auth'
+];
+
+Route::group($groupData, function(){
+    $methods = ['index', 'create', 'edit','store', 'update', 'destroy'];
+    Route::resource('posts', 'PostController')
+        ->only($methods)
+        ->names('admin.blog.posts');
+});
+
+
+Route::group($groupData, function(){
+    $methods = ['index', 'edit', 'update', 'create', 'store', 'destroy'];
+    Route::resource('categories', 'CategoryController')
+        ->only($methods)
+        ->names('admin.blog.categories');
+});
+

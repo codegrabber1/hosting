@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Admin\Blog;
 
+use App\Models\BlogPost;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class PostController extends BaseController
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +16,10 @@ class PostController extends BaseController
     public function index()
     {
         //
+        $posts = BlogPost::paginate(10);
+
+        return view(env('THEME').'.admin.posts', compact('posts'));
+
     }
 
     /**
@@ -70,6 +75,7 @@ class PostController extends BaseController
     public function update(Request $request, $id)
     {
         //
+
     }
 
     /**

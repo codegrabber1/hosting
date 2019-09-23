@@ -54,15 +54,15 @@ function initWordMap() {
                 { latLng: [55.37,-3.43], name: 'United Kingdom' },
             ]
         });
-        $('#usa').vectorMap({
-            map : 'us_aea_en',
-            backgroundColor : 'transparent',
-            regionStyle : {
-                initial : {
-                    fill : '#72c2ff'
-                }
-            }
-        }); 
+        // $('#usa').vectorMap({
+        //     map : 'us_aea_en',
+        //     backgroundColor : 'transparent',
+        //     regionStyle : {
+        //         initial : {
+        //             fill : '#72c2ff'
+        //         }
+        //     }
+        // });
     }, 500);
 }
 
