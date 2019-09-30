@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Blog;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Illuminate\Contracts\Support\Renderable;
 
 class DashboardController extends BaseController
 {
@@ -14,17 +13,18 @@ class DashboardController extends BaseController
      */
     public function __construct()
     {
+        parent::__construct();
         $this->middleware('auth');
     }
 
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return Renderable
      */
     public function index(){
 
-        return view(env('THEME').'.admin.blog-dash');
+        return view(env('THEME').'.admin.posts.blog-dash');
 
     }
 }

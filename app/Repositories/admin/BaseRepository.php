@@ -2,7 +2,6 @@
 
 namespace App\Repositories\admin;
 
-
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Database\Eloquent\Model;
 

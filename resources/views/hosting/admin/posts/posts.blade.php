@@ -14,6 +14,7 @@
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">
                     <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
+                    <a class="btn btn-success btn-icon float-right" href="{{ route('admin.blog.posts.create') }}"><i class="zmdi zmdi-hc-fw"></i></a>
                 </div>
             </div>
         </div>
@@ -25,9 +26,14 @@
                     <div class="card">
                         <div class="blogitem mb-5">
                             <div class="blogitem-image">
-                                <a href="blog-details.html"><img src="{{ $post->image }}" alt="blog image"></a>
+                                <a href="blog-details.html"><img src="{{ asset(env('THEME')).'/images/content/articles/'. $post->image }}" alt="blog image"></a>
                                 <span class="blogitem-date">{{ $post->created_at }}</span>
-{{--                                Monday, December 15, 2018--}}
+                                @if($post->is_published)
+                                    <p class="text-success">Published</p>
+                                @else
+                                    <p class="text-danger">Unpublished</p>
+                                @endif
+                                {{-- Monday, December 15, 2018--}}
                             </div>
                             <div class="blogitem-content">
                                 <div class="blogitem-header">
@@ -44,9 +50,15 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <h5><a href="blog-details.html">{{ $post->title }}</a></h5>
-                                <p>{{ $post->excerpt }}</p>
-                                <a href="blog-details.html" class="btn btn-info">Read More</a>
+                                <h5><a href="{{ route('admin.blog.posts.edit', $post->id) }}">{{ $post->title }}</a></h5>
+
+                                <a href="{{ route('admin.blog.posts.edit', $post->id) }}" class="btn btn-info">Edit post</a>
+
+                                <form method='post' action="{{ route('admin.blog.posts.destroy', $post->id) }}" class='right' name="delete">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="button" class="btn btn-danger">Delete post</button>
+                                </form>
                             </div>
                         </div>
                     </div>

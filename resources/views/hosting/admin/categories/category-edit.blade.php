@@ -56,7 +56,7 @@
                         @if($errors->any())
                             <div class="alert alert-danger" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">x</span>
+                                    <span aria-hidden="true"><i class="zmdi zmdi-close"></i></span>
                                 </button>
                                 {{ $errors->first() }}
                             </div>
@@ -65,7 +65,7 @@
                         @if(session('success'))
                             <div class="alert alert-success">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">x</span>
+                                    <span aria-hidden="true"><i class="zmdi zmdi-close"></i></span>
                                 </button>
                                 {{ session()->get('success') }}
 
@@ -88,7 +88,7 @@
                                     @foreach($catList as $cat)
                                         <option value="{{ $cat->id }}"
                                             @if($cat->id == $item->parent_id) selected @endif>
-                                            {{ $cat->id }} . {{ $cat->title }}
+                                            {{ $cat->id_title }}
                                         </option>
                                     @endforeach
                                 </select>

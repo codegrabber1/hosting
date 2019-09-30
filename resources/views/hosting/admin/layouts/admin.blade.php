@@ -9,8 +9,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -25,6 +23,7 @@
 
     <link rel="stylesheet" href="{{ asset(env('THEME')) }}/admin/assets/plugins/summernote/dist/summernote.css"/>
     <link rel="stylesheet" href="{{ asset(env('THEME')) }}/admin/assets/plugins/bootstrap-select/css/bootstrap-select.css" />
+    <link rel="stylesheet" href="{{ asset(env('THEME')) }}/admin/assets/plugins/dropify/css/dropify.min.css">
 
     <!-- Bootstrap Material Datetime Picker Css -->
     <link href="{{ asset(env('THEME')) }}/admin/assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
@@ -294,14 +293,32 @@
                     </div>
                 </li>
                 <li class="active open"><a href="{{ route('home') }}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
-                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>App</span></a>
+                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Settings</span></a>
                     <ul class="ml-menu">
                         <li><a href="mail-inbox.html">Email</a></li>
                         <li><a href="chat.html">Chat Apps</a></li>
                         <li><a href="events.html">Calendar</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html">Contact info</a></li>
                         <li><a href="contact.html">Support</a></li>
                         <li><a href="contact.html">Partnership</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-assignment"></i><span>Customers</span></a>
+                    <ul class="ml-menu">
+                        <li><a href="pricing.html">New customer</a></li>
+                        <li><a href="file-documents.html">All customer</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-assignment"></i><span>Orders</span></a>
+                    <ul class="ml-menu">
+                        <li><a href="pricing.html">New order</a></li>
+                        <li><a href="file-documents.html">All orders</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-assignment"></i><span>Invoices</span></a>
+                    <ul class="ml-menu">
+                        <li><a href="pricing.html">New invoice</a></li>
+                        <li><a href="file-documents.html">All invoices</a></li>
                     </ul>
                 </li>
                 <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-assignment"></i><span>Tariff plans</span></a>
@@ -310,16 +327,15 @@
                         <li><a href="file-documents.html">Documents</a></li>
                         <li><a href="invoices.html">Invoices</a></li>
                         <li><a href="invoices-list.html">Invoices List</a></li>
-                        <li><a href="events.html">Calendar</a></li>
+                        <li><a href="events.html">Calendar of using hosting</a></li>
                     </ul>
                 </li>
                 <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-blogger"></i><span>Blog</span></a>
                     <ul class="ml-menu">
                         <li><a href="{{ route('admin.blog.dashboard') }}">Dashboard</a></li>
                         <li><a href="{{ route('admin.blog.categories.index') }}">Categories</a></li>
-                        <li><a href="{{ route('admin.blog.posts.create') }}">Blog Post</a></li>
                         <li><a href="{{ route('admin.blog.posts.index') }}">All posts</a></li>
-                        <li><a href="blog-details.html">Blog Details</a></li>
+                        <li><a href="{{ route('admin.blog.posts.create') }}">Add new post</a></li>
                     </ul>
                 </li>
                 <li>
@@ -436,7 +452,9 @@
     <script src="{{ asset(env('THEME')) }}/admin/assets/plugins/dropzone/dropzone.js"></script>
     <script src="{{ asset(env('THEME')) }}/admin/assets/bundles/sparkline.bundle.js"></script> <!-- Sparkline Plugin Js -->
 
+    <script src="{{ asset(env('THEME')) }}/admin/assets/plugins/dropify/js/dropify.min.js"></script>
     <script src="{{ asset(env('THEME')) }}/admin/assets/plugins/summernote/dist/summernote.js"></script>
+
 
     <!-- Bootstrap Material Datetime Picker Plugin Js -->
     <script src="{{ asset(env('THEME')) }}/admin/assets/plugins/momentjs/moment.js"></script> <!-- Moment Plugin Js -->
@@ -445,5 +463,6 @@
     <script src="{{ asset(env('THEME')) }}/admin/assets/bundles/mainscripts.bundle.js"></script>
     <script src="{{ asset(env('THEME')) }}/admin/assets/js/pages/forms/basic-form-elements.js"></script>
     <script src="{{ asset(env('THEME')) }}/admin/assets/js/pages/index.js"></script>
+    <script src="{{ asset(env('THEME')) }}/admin/assets/js/pages/forms/dropify.js"></script>
 </body>
 </html>

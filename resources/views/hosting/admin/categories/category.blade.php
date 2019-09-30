@@ -54,6 +54,17 @@
                             </table>
                         </div>
                     </div>
+                    <div class="card">
+                        <div class="body">
+                            @if($category->total() > $category->count())
+                                <ul class="pagination pagination-primary m-b-0">
+                                    <li class="page-item">
+                                        {{ $category->links() }}
+                                    </li>
+                                </ul>
+                            @endif
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
