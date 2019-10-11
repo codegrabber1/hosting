@@ -7,7 +7,6 @@
                     <h2>Edit blog post</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}"><i class="zmdi zmdi-home"></i> Aero</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('admin.blog.dashboard') }}">Blog</a></li>
                         <li class="breadcrumb-item"><a href="{{ route('admin.blog.posts.index') }}">Blog Posts</a></li>
                         <li class="breadcrumb-item active">Add new post</li>
                     </ul>
@@ -22,7 +21,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-12">
-
                         <div class="card">
                             <div class="blogitem mb-5">
                                 <form action="{{ route('admin.blog.posts.store')  }}" method="post" name="create" enctype="multipart/form-data">
@@ -33,7 +31,6 @@
                                             <h2>Choose an <strong>image</strong> for your post.</h2>
                                         </div>
                                         <div class="body">
-
                                             <input type="file"  name="image" id="dropify-event">
                                         </div>
                                     </div>
@@ -78,7 +75,7 @@
                                                 <select name="category_id" id="category_id">
                                                     @foreach($catList as $cat)
                                                         <option value="{{ $cat->id }}">
-                                                            {{ $cat->id_title }}
+                                                            {{ $cat->title }}
                                                         </option>
                                                     @endforeach
                                                 </select>
@@ -88,7 +85,6 @@
                                             <div class="body">
                                                 <label for="excerpt">Excerpt</label>
                                                 <textarea id="excerpt" name="excerpt" class="summernote">
-
                                             </textarea>
                                             </div>
                                         </div>
@@ -96,13 +92,11 @@
                                             <div class="body">
                                                 <label for="description">Full text</label>
                                                 <textarea id="description" name="content" class="summernote"></textarea>
-
                                                 <input type="submit" name="submit" class="btn btn-info waves-effect m-t-20" value="POST">
                                                 <div class="checkbox">
                                                     <input type="hidden"
                                                            name="is_published"
                                                            value="0">
-
                                                     <input id="is_published"
                                                            name="is_published"
                                                            type="checkbox"
@@ -128,10 +122,10 @@
 
                                 @foreach($resentPosts as $item)
                                 <li>
-                                    <a href="{{ route('admin.blog.posts.edit', $item->id) }}"><img src="{{ asset(env('THEME')).'images/content/articles'. $item->image }}" alt="blog thumbnail"></a>
+                                    <a href="{{ route('admin.blog.posts.edit', $item->id) }}"><img src="{{ asset(env('THEME')).'/images/content/articles/'. $item->image }}" alt="blog thumbnail"></a>
                                     <div class="recentpost-content">
                                         <a href="{{ route('admin.blog.posts.edit', $item->id) }}">{{ $item->title }}</a>
-                                        <span> {{ $item->created_at }}</span>
+                                        <span> {{ \Carbon\Carbon::parse($item->created_at )->locale('uk')->isoFormat('M d, Y ')}}</span>
                                     </div>
                                 </li>
                                 @endforeach
@@ -155,7 +149,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

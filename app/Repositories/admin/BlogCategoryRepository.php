@@ -49,15 +49,19 @@ class BlogCategoryRepository extends BaseRepository {
      */
     public function getForSelect()
     {
-        $columns = implode(', ', [
+        $columns = [
             'id',
-            'CONCAT(id, ". ", title) as id_title',
+            'title',
+            'parent_id',
             'description'
-        ]);
+        ];
 
         $result = $this
             ->startCondition()
-            ->selectRaw($columns)
+            ->select($columns)
+            ->with([
+                'parentCategory:id,title',
+            ])
             ->toBase()
             ->get();
 

@@ -17,7 +17,14 @@ class BlogPostRepository extends BaseRepository {
         return Model::class;
     }
 
-    public function getPostsList($perPage = null)
+    /**
+     * Getting the posts list on the dashboard and sidebar.
+     * @param null $perPage
+     * @param null $published
+     * @param null $unpublished
+     * @return mixed
+     */
+    public function getPostsList($perPage = null, $published = null, $unpublished = null)
     {
         $columns = [
             'id', 'image', 'title', 'created_at', 'is_published'
@@ -26,12 +33,20 @@ class BlogPostRepository extends BaseRepository {
         $result = $this
             ->startCondition()
             ->select($columns)
-            ->orderBy('created_at','desc')
+            ->orderBy('created_at','asc')
+            ->where('is_published', $published)
+            ->orWhere('is_published', $unpublished)
             ->paginate($perPage);
 
         return $result;
     }
 
+
+    /**
+     * Getting the one post for editing.
+     * @param int $id
+     * @return mixed
+     */
     public function getPostEdit(int $id) {
 
         return $this->startCondition()

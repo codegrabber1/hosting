@@ -7,7 +7,6 @@
                     <h2>Categories</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}"><i class="zmdi zmdi-home"></i> Aero</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('admin.blog.dashboard') }}">Blog</a></li>
                         <li class="breadcrumb-item active">Categories</li>
                     </ul>
                     <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
@@ -42,7 +41,7 @@
                                         <td>{{ $item->title }}</td>
                                         <td>{{ $item->slug }}</td>
                                         <td>{{ $item->description }}</td>
-                                        <td>{{ $item->parent_id }}</td>
+                                        <td>{{ $item->parentTitle }}</td>
                                         <td>{{ $item->updated_at }}</td>
                                         <td>
                                             <a href="{{ route('admin.blog.categories.edit', $item->id) }}" class="btn btn-default waves-effect waves-float btn-sm waves-green"><i class="zmdi zmdi-edit"></i></a>

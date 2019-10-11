@@ -1,17 +1,19 @@
 @extends(env('THEME').'.admin.layouts.admin')
 @section('content')
     <div class="body_scroll">
+        @include(env('THEME').'.admin.posts.includes.message')
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
+
                     <h2>Blog Posts</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}"><i class="zmdi zmdi-home"></i> Aero</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('admin.blog.dashboard') }}">Blog</a></li>
                         <li class="breadcrumb-item active">All Posts</li>
                     </ul>
                     <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
                 </div>
+
                 <div class="col-lg-5 col-md-6 col-sm-12">
                     <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
                     <a class="btn btn-success btn-icon float-right" href="{{ route('admin.blog.posts.create') }}"><i class="zmdi zmdi-hc-fw"></i></a>
@@ -21,19 +23,19 @@
         @if($posts)
         <div class="container">
             <div class="row">
+
                 @foreach($posts as $post)
                 <div class="col-lg-6 col-md-12">
                     <div class="card">
                         <div class="blogitem mb-5">
                             <div class="blogitem-image">
-                                <a href="blog-details.html"><img src="{{ asset(env('THEME')).'/images/content/articles/'. $post->image }}" alt="blog image"></a>
-                                <span class="blogitem-date">{{ $post->created_at }}</span>
+                                <a href="{{ route('admin.blog.posts.edit', $post->id) }}"><img src="{{ asset(env('THEME')).'/images/content/articles/'. $post->image }}" alt="blog image"></a>
+                                <span class="blogitem-date">{{ \Carbon\Carbon::parse($post->created_at )->locale('uk')->isoFormat('dddd, d MMM Y, H:m:s') }}</span>
                                 @if($post->is_published)
                                     <p class="text-success">Published</p>
                                 @else
                                     <p class="text-danger">Unpublished</p>
                                 @endif
-                                {{-- Monday, December 15, 2018--}}
                             </div>
                             <div class="blogitem-content">
                                 <div class="blogitem-header">
@@ -57,7 +59,7 @@
                                 <form method='post' action="{{ route('admin.blog.posts.destroy', $post->id) }}" class='right' name="delete">
                                     @method('DELETE')
                                     @csrf
-                                    <button type="button" class="btn btn-danger">Delete post</button>
+                                    <button type="submit" class="btn btn-danger">Delete post</button>
                                 </form>
                             </div>
                         </div>

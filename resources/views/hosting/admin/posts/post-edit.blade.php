@@ -7,7 +7,6 @@
                     <h2>Edit blog post</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}"><i class="zmdi zmdi-home"></i> Aero</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('admin.blog.dashboard') }}">Blog</a></li>
                         <li class="breadcrumb-item"><a href="{{ route('admin.blog.posts.index') }}">Blog Posts</a></li>
                         <li class="breadcrumb-item active">Post Edit</li>
                     </ul>
@@ -25,34 +24,17 @@
                     @if($item->exists)
                     <div class="card">
                         <div class="blogitem mb-5">
-                            <form action="{{ route('admin.blog.posts.update', $item->id)  }}" method="post" name="upadate">
+                            <form action="{{ route('admin.blog.posts.update', $item->id)  }}" method="post" name="update" enctype="multipart/form-data">
                                 @method('PATCH')
                                 @csrf
-                                @if($errors->any())
-                                    <div class="alert alert-danger" role="alert">
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true"><i class="zmdi zmdi-close"></i></span>
-                                        </button>
-                                        {{ $errors->first() }}
-                                    </div>
-                                @endif
-
-                                @if(session('success'))
-                                    <div class="alert alert-success">
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true"><i class="zmdi zmdi-close"></i></span>
-                                        </button>
-                                        {{ session()->get('success') }}
-
-                                    </div>
-                                @endif
+                                @include(env('THEME').'.admin.posts.includes.message')
                                 <div class="blogitem-image">
-                                    <img src="{{ asset(env('THEME')).'/images/content/articles/'. $item->image }}" alt="{{ $item->title }}">
+                                    <input type="file" name="image" id="dropify-event" data-default-file="{{ asset(env('THEME')).'/images/content/articles/'. $item->image }}">
                                 </div>
                                 <div class="blogitem-content">
                                     <div class="blogitem-header">
                                         <div class="blogitem-meta">
-                                            <span><i class="zmdi zmdi-account"></i>By <a href="javascript:void(0);">Michael</a></span>
+                                            <span><i class="zmdi zmdi-account"></i>By <a href="">{{ Auth::user()->name }}</a></span>
                                             <span><i class="zmdi zmdi-comments"></i><a href="blog-details.html">Comments(3)</a></span>
                                         </div>
                                         <div class="blogitem-share">
@@ -76,7 +58,7 @@
                                                 <input id="title" name="title" type="text" class="form-control" value="{{ old('title', $item->title )}}" />
                                             </div>
                                                 <div class="form-group">
-                                                    <label for="slug">Slung</label>
+                                                    <label for="slug">Slug</label>
                                                     <input id="slug" name="slug" type="text" class="form-control" value="{{ old('slug', $item->slug )}}" />
                                                 </div>
                                         </div>
@@ -99,7 +81,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label for="author">Author</label>
-                                                        <input type="text" id="updated" name="updated" class="form-control" value="{{ $item->user_id }}">
+                                                        <input type="text" id="updated" name="updated" class="form-control" value="{{ $item->user->name }}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -148,12 +130,25 @@
                         </div>
                         <div class="body">
                             <ul class="list-unstyled mb-0 widget-categories">
-                                <li><a href="javascript:void(0);">Business Report</a></li>
-                                <li><a href="javascript:void(0);">Business Growth</a></li>
-                                <li><a href="javascript:void(0);">Business Strategy</a></li>
-                                <li><a href="javascript:void(0);">Financial Advise</a></li>
-                                <li><a href="javascript:void(0);">Creative Idea</a></li>
-                                <li><a href="javascript:void(0);">Marketing</a></li>
+                                    <li><a href="#">{{ $item->category->title }}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>Unpublished</strong> Posts</h2>
+                        </div>
+                        <div class="body">
+                            <ul class="list-unstyled mb-0 widget-recentpost">
+                                @foreach($unpublishedPosts as $unpdpost)
+                                    <li>
+                                        <a href="{{ route('admin.blog.posts.edit', $unpdpost->id) }}"><img src="{{ asset(env('THEME')).'/images/content/articles/'. $unpdpost->image }}" alt="{{ $unpdpost->title }}"></a>
+                                        <div class="recentpost-content">
+                                            <a href="{{ route('admin.blog.posts.edit', $unpdpost->id) }}">{{ $unpdpost->title }}</a>
+                                            <span>{{ \Carbon\Carbon::parse($unpdpost->updated_at )->locale('uk')->isoFormat('MMMM d, Y')}}</span>
+                                        </div>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -163,34 +158,16 @@
                         </div>
                         <div class="body">
                             <ul class="list-unstyled mb-0 widget-recentpost">
+                                @foreach($resentPosts as $recent)
+
                                 <li>
-                                    <a href="blog-details.html"><img src="assets/images/image-gallery/1.jpg" alt="blog thumbnail"></a>
+                                    <a href="{{ route('admin.blog.posts.edit', $recent->id) }}"><img src="{{ asset(env('THEME')).'/images/content/articles/'. $recent->image }}" alt="{{ $recent->title }}"></a>
                                     <div class="recentpost-content">
-                                        <a href="blog-details.html">Fundamental analysis services</a>
-                                        <span>August 01, 2018</span>
+                                        <a href="{{ route('admin.blog.posts.edit', $recent->id) }}">{{ $recent->title }}</a>
+                                        <span>{{ \Carbon\Carbon::parse($recent->updated_at )->locale('uk')->isoFormat('MMMM d, Y ')}}</span>
                                     </div>
                                 </li>
-                                <li>
-                                    <a href="blog-details.html"><img src="assets/images/image-gallery/2.jpg" alt="blog thumbnail"></a>
-                                    <div class="recentpost-content">
-                                        <a href="blog-details.html">Steps to a successful Business</a>
-                                        <span>November 01, 2018</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="blog-details.html"><img src="assets/images/image-gallery/3.jpg" alt="blog thumbnail"></a>
-                                    <div class="recentpost-content">
-                                        <a href="#blog-details.html">Development Progress Conference</a>
-                                        <span>December 01, 2018</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="blog-details.html"><img src="assets/images/image-gallery/12.jpg" alt="blog thumbnail"></a>
-                                    <div class="recentpost-content">
-                                        <a href="blog-details.html">Steps to a successful Business</a>
-                                        <span>December 15, 2018</span>
-                                    </div>
-                                </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>

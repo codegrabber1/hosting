@@ -10,7 +10,7 @@
                     <h2>Edit blog Category</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}"><i class="zmdi zmdi-home"></i> Aero</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('admin.blog.dashboard') }}">Blog</a></li>
+{{--                        <li class="breadcrumb-item"><a href="{{ route('admin.blog.dashboard') }}">Blog</a></li>--}}
                         <li class="breadcrumb-item"><a href="{{ route('admin.blog.categories.index') }}">Categories</a></li>
                         <li class="breadcrumb-item active">Edit category</li>
                     </ul>
@@ -36,7 +36,6 @@
                                         <h2>Add new blog category</h2>
                                         <ul class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="{{ route('home') }}"><i class="zmdi zmdi-home"></i> Aero</a></li>
-                                            <li class="breadcrumb-item"><a href="{{ route('admin.blog.dashboard') }}">Blog</a></li>
                                             <li class="breadcrumb-item"><a href="{{ route('admin.blog.categories.index') }}">Categories</a></li>
                                             <li class="breadcrumb-item active">Edit category</li>
                                         </ul>
@@ -88,7 +87,7 @@
                                     @foreach($catList as $cat)
                                         <option value="{{ $cat->id }}"
                                             @if($cat->id == $item->parent_id) selected @endif>
-                                            {{ $cat->id_title }}
+                                            {{ $cat->title }}
                                         </option>
                                     @endforeach
                                 </select>

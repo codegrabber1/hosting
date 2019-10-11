@@ -2,13 +2,13 @@
 
 @section('content')
     <div class="">
+        <!-- Main info -->
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
                     <h2>Dashboard</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Aero</a></li>
-                        <li class="breadcrumb-item active">Dashboard 1</li>
+                        <li class="breadcrumb-item active">Dashboard</li>
                     </ul>
                     <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
                 </div>
@@ -69,96 +69,156 @@
                 </div>
             </div>
             <div class="row clearfix">
-                <div class="col-md-12 col-lg-8">
+
+            </div>
+
+        </div>
+        <!-- #Main info -->
+        <!-- Orders -->
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Orders Dashboard</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="">New Order</a></li>
+                        <li class="breadcrumb-item"><a href="">All Orders</a></li>
+
+                    </ul>
+                    <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <a class="btn btn-success btn-icon float-right" href="{{ route('admin.blog.categories.create') }}"><i class="zmdi zmdi-hc-fw"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <p>Here is Tariffs</p>
+        </div>
+        <!-- #Orders -->
+        <!-- Tariffs -->
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Tariff Dashboard</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="">All tariff</a></li>
+                        <li class="breadcrumb-item"><a href="">Pricing</a></li>
+                        <li class="breadcrumb-item"><a href="">Documents</a></li>
+                        <li class="breadcrumb-item"><a href="">Invoices</a></li>
+                    </ul>
+                    <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <a class="btn btn-success btn-icon float-right" href="{{ route('admin.blog.categories.create') }}"><i class="zmdi zmdi-hc-fw"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <p>Here is Tariffs</p>
+        </div>
+        <!-- #Tariffs -->
+        <!-- Orders -->
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Customers Dashboard</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="">New Customer</a></li>
+                        <li class="breadcrumb-item"><a href="">All Customers</a></li>
+
+                    </ul>
+                    <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <a class="btn btn-success btn-icon float-right" href="{{ route('admin.blog.categories.create') }}"><i class="zmdi zmdi-hc-fw"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <p>Here is Tariffs</p>
+        </div>
+        <!-- #Orders -->
+        <!-- Blog info -->
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Blog Dashboard</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ route('admin.blog.categories.index') }}">Categories</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.blog.posts.index') }}">Posts</a></li>
+                    </ul>
+                    <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <a class="btn btn-success btn-icon float-right" href="{{ route('admin.blog.categories.create') }}"><i class="zmdi zmdi-hc-fw"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-3 col-md-6">
                     <div class="card">
-                        <div class="header">
-                            <h2><strong>Visitors</strong> Statistics</h2>
-                            <ul class="header-dropdown">
-                                <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
-                                    <ul class="dropdown-menu dropdown-menu-right slideUp">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else</a></li>
-                                    </ul>
-                                </li>
-                                <li class="remove">
-                                    <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <div id="world-map-markers" class="jvector-map"></div>
+                        <div class="body xl-blue">
+                            <h4 class="mt-0 mb-0">2,048</h4>
+                            <p class="mb-0">Total Leads</p>
+                            <div class="sparkline" data-type="line" data-spot-Radius="1" data-highlight-Spot-Color="rgb(233, 30, 99)" data-highlight-Line-Color="#222"
+                                 data-min-Spot-Color="rgb(233, 30, 99)" data-max-Spot-Color="rgb(0, 150, 136)" data-spot-Color="rgb(0, 188, 212)"
+                                 data-offset="90" data-width="100%" data-height="40px" data-line-Width="2" data-line-Color="#FFFFFF"
+                                 data-fill-Color="transparent"> 7,6,7,8,5,9,8,6,7 </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-12">
+                <div class="col-lg-3 col-md-6">
                     <div class="card">
-                        <div class="header">
-                            <h2><strong>Distribution</strong></h2>
-                            <ul class="header-dropdown">
-                                <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
-                                    <ul class="dropdown-menu dropdown-menu-right slideUp">
-                                        <li><a href="javascript:void(0);">Edit</a></li>
-                                        <li><a href="javascript:void(0);">Delete</a></li>
-                                        <li><a href="javascript:void(0);">Report</a></li>
-                                    </ul>
-                                </li>
-                                <li class="remove">
-                                    <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
-                                </li>
-                            </ul>
+                        <div class="body xl-purple">
+                            <h4 class="mt-0 mb-0">521</h4>
+                            <p class="mb-0 ">Total Connections</p>
+                            <div class="sparkline" data-type="line" data-spot-Radius="1" data-highlight-Spot-Color="rgb(233, 30, 99)" data-highlight-Line-Color="#222"
+                                 data-min-Spot-Color="rgb(233, 30, 99)" data-max-Spot-Color="rgb(0, 150, 136)" data-spot-Color="rgb(0, 188, 212)"
+                                 data-offset="90" data-width="100%" data-height="42px" data-line-Width="2" data-line-Color="#FFFFFF"
+                                 data-fill-Color="transparent"> 6,5,7,4,5,3,8,6,5 </div>
                         </div>
-                        <div class="body text-center">
-                            <div id="chart-pie" class="c3_chart d_distribution"></div>
-                            <button class="btn btn-primary mt-4 mb-4">View More</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="body xl-green">
+                            <h4 class="mt-0 mb-0">73</h4>
+                            <p class="mb-0 ">Articles</p>
+                            <div class="sparkline" data-type="line" data-spot-Radius="1" data-highlight-Spot-Color="rgb(233, 30, 99)" data-highlight-Line-Color="#222"
+                                 data-min-Spot-Color="rgb(233, 30, 99)" data-max-Spot-Color="rgb(0, 150, 136)" data-spot-Color="rgb(0, 188, 212)"
+                                 data-offset="90" data-width="100%" data-height="45px" data-line-Width="2" data-line-Color="#FFFFFF"
+                                 data-fill-Color="transparent"> 8,7,7,5,5,4,8,7,5 </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="body xl-pink">
+                            <h4 class="mt-0 mb-0">15</h4>
+                            <p class="mb-0">Categories</p>
+                            <div class="sparkline" data-type="line" data-spot-Radius="1" data-highlight-Spot-Color="rgb(233, 30, 99)" data-highlight-Line-Color="#222"
+                                 data-min-Spot-Color="rgb(233, 30, 99)" data-max-Spot-Color="rgb(0, 150, 136)" data-spot-Color="rgb(0, 188, 212)"
+                                 data-offset="90" data-width="100%" data-height="45px" data-line-Width="2" data-line-Color="#FFFFFF"
+                                 data-fill-Color="transparent"> 7,6,7,8,5,9,8,6,7 </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row clearfix">
-                <div class="col-lg-12">
+                <div class="col-lg-12 col-md-12">
                     <div class="card">
                         <div class="header">
-                            <h2><strong>Traffic</strong> Source</h2>
-                            <ul class="header-dropdown">
-                                <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
-                                    <ul class="dropdown-menu dropdown-menu-right slideUp">
-                                        <li><a href="javascript:void(0);">Edit</a></li>
-                                        <li><a href="javascript:void(0);">Delete</a></li>
-                                        <li><a href="javascript:void(0);">Report</a></li>
-                                    </ul>
-                                </li>
-                                <li class="remove">
-                                    <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
-                                </li>
-                            </ul>
+                            <h2><strong>Popular</strong> Categories</h2>
                         </div>
                         <div class="body">
-                            <div class="row">
-                                <div class="col-lg-8 col-md-6 col-sm-12">
-                                    <div id="chart-area-step" class="c3_chart d_traffic"></div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-12">
-                                    <span> More than 30% percent of users come from direct links. Check details page for more information.</span>
-                                    <div class="progress mt-4">
-                                        <div class="progress-bar l-amber" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%;"></div>
-                                    </div>
-                                    <div class="d-flex bd-highlight mt-4">
-                                        <div class="flex-fill bd-highlight">
-                                            <h5 class="mb-0">21,521 <i class="zmdi zmdi-long-arrow-up"></i></h5>
-                                            <small>Today</small>
-                                        </div>
-                                        <div class="flex-fill bd-highlight">
-                                            <h5 class="mb-0">%12.35 <i class="zmdi zmdi-long-arrow-down"></i></h5>
-                                            <small>Last month %</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <div id="chart-bar" style="height: 16rem"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- #Blog info -->
+
     </div>
 @endsection

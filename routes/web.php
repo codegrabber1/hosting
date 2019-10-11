@@ -23,8 +23,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Admin.Blog.
-Route::get('admin/blog/dashboard', 'Admin\Blog\DashboardController@index')->name('admin.blog.dashboard');
-
 $groupData = [
     'namespace' => 'Admin\Blog',
     'prefix' => 'admin/blog',
@@ -40,6 +38,12 @@ Route::group($groupData, function(){
     Route::resource('categories', 'CategoryController')
         ->only($methods)
         ->names('admin.blog.categories');
+
+    Route::resource('tariff', 'TariffController')
+        ->only($methods)
+        ->names('admin.tariff.items');
 });
+
+
 
 

@@ -8,9 +8,7 @@ use App\Models\BlogPost;
 use App\Repositories\admin\BlogCategoryRepository;
 use App\Repositories\admin\BlogPostRepository;
 use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Support\Str;
 
 class PostController extends BaseController
 {
@@ -41,7 +39,7 @@ class PostController extends BaseController
     public function index()
     {
         //
-        $posts = $this->blogPostRepository->getPostsList(6);
+        $posts = $this->blogPostRepository->getPostsList(6, 1, 0);
 
         return view(env('THEME').'.admin.posts.posts', compact('posts'));
 
@@ -77,17 +75,16 @@ class PostController extends BaseController
 
         if(isset($data['image'])){
             $name = $request->file('image');
+            //dd($name);
             $data['image'] = $name->getClientOriginalName();
             $path = env('THEME').'/images/content/articles';
             $request->image->move($path, $data['image']);
 
         }
 
-        if(empty($data['slug'])) {
-            $data['slug'] = Str::slug($data['title']);
-        }
-        //dd($data);
-
+        /**
+         * The controller hasn't creates or saves data in database.
+         */
         $item = (new BlogPost())->create($data);
 
         return $item ? redirect()
@@ -119,7 +116,10 @@ class PostController extends BaseController
         //
         $item = $this->blogPostRepository->getPostEdit($id);
 
-        return view(env('THEME').'.admin.posts.post-edit', compact('item'));
+        $resentPosts = $this->blogPostRepository->getPostsList(6, 1);
+        $unpublishedPosts = $this->blogPostRepository->getPostsList(6, 0);
+
+        return view(env('THEME').'.admin.posts.post-edit', compact('item','resentPosts','unpublishedPosts'));
     }
 
     /**
@@ -133,14 +133,39 @@ class PostController extends BaseController
     {
         //
         $item = $this->blogPostRepository->getPostEdit($id);
+        //dd($item);
+
+        //$path = env('THEME').'/images/content/articles/';
+
+//        if(file_exists(public_path($path, $item['image'])))
+//        {
+//            $im = unlink(public_path($path.$item['image']));
+//            //dd($im);
+//        }else{
+//
+//            //dd('doesn\'t exist');
+//        }
 
         if(empty($item)){
             return back()
-                ->withErrors(['msg' => "Post with id=[{$id}] not found."])
+                ->withErrors(['msg' => "Post with id=[ {$id} ] not found."])
                 ->withInput();
         }
         $data = $request->all();
 
+        if(isset($data['image'])){
+
+            $data['image'] = $request->file('image')->getClientOriginalName();
+
+            $path = env('THEME').'/images/content/articles';
+
+            $request->image->move($path, $data['image']);
+
+        }
+
+        /**
+         * The controller hasn't creates or saves data in database.
+         */
         $result = $item->update($data);
 
         return $result ? redirect()
@@ -160,6 +185,12 @@ class PostController extends BaseController
     public function destroy($id)
     {
         //
-        dd(__METHOD__, $id);
+
+        $result = BlogPost::destroy($id);
+
+        return $result ? redirect()
+            ->route('admin.blog.posts.index')
+            ->with(['success' => "Post with id-[$id] deleted successfully"]) : back()
+            ->withErrors(['msg' => 'Not deleted']);
     }
 }
