@@ -53,7 +53,7 @@ class PostController extends BaseController
     public function create()
     {
         //
-        $resentPosts = $this->blogPostRepository->getPostsList(10);
+        $resentPosts = $this->blogPostRepository->getPostsList(6, 1);
 
         $catList = $this->blogCategoryRepository->getForSelect();
 
@@ -75,7 +75,6 @@ class PostController extends BaseController
 
         if(isset($data['image'])){
             $name = $request->file('image');
-            //dd($name);
             $data['image'] = $name->getClientOriginalName();
             $path = env('THEME').'/images/content/articles';
             $request->image->move($path, $data['image']);
@@ -90,7 +89,7 @@ class PostController extends BaseController
         return $item ? redirect()
             ->route('admin.blog.posts.edit', [$item->id])
             ->with(['success' => 'Post has ben created successfully']) : back()
-            ->withErrors(['msg' => 'Not updated'])
+            ->withErrors(['msg' => 'Not stored'])
             ->withInput();
     }
 

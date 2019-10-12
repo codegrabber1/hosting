@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div>
-        @if($posts)
+        @if($posts->exists)
         <div class="container">
             <div class="row">
 

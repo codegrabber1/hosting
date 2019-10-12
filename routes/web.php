@@ -24,24 +24,28 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Admin.Blog.
 $groupData = [
-    'namespace' => 'Admin\Blog',
-    'prefix' => 'admin/blog',
+    'namespace' => 'Admin',
+    'prefix' => 'admin',
     'middleware' => 'auth'
 ];
 
 Route::group($groupData, function(){
     $methods = ['index', 'create', 'edit','store', 'update', 'destroy'];
-    Route::resource('posts', 'PostController')
+    Route::resource('/blog/posts', 'Blog\PostController')
         ->only($methods)
         ->names('admin.blog.posts');
 
-    Route::resource('categories', 'CategoryController')
+    Route::resource('/blog/categories', 'Blog\CategoryController')
         ->only($methods)
         ->names('admin.blog.categories');
 
-    Route::resource('tariff', 'TariffController')
+    Route::resource('/tariff/prices', 'Tariff\PricingController')
         ->only($methods)
-        ->names('admin.tariff.items');
+        ->names('admin.tariff.prices');
+
+    Route::resource('/tariff/gifts', 'Tariff\GiftController')
+        ->only($methods)
+        ->names('admin.tariff.gifts');
 });
 
 

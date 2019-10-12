@@ -1,12 +1,73 @@
 $(function () {
     //Taken from http://ionden.com/a/plugins/ion.rangeSlider/demo.html
 
-    $("#range_01").ionRangeSlider();
+    $("#price").ionRangeSlider({
+        skin: "round",
+        grid: true,
+        min: 0,
+        max:10000,
+        //step: 10,
+        prefix: "$"
+    });
 
-    $("#range_02").ionRangeSlider({
-        min: 100,
+    $("#disc_space").ionRangeSlider({
+        skin: "round",
+        grid: true,
+        min: 0,
+        max:10000,
+        step: 10,
+        postfix: " Mb"
+    });
+
+    $("#php_versions").ionRangeSlider({
+        type: "double",
+        skin: "round",
+        grid: true,
+        from: 2,
+        to: 5,
+        values: [5.3, 5.4, 5.5, 5.6, 7.0, 7.1, 7.2, 7.3]
+    });
+
+    $('#php_memory').ionRangeSlider({
+        skin: "round",
+        grid: true,
+        min: 0,
+        max: 500,
+        step: 1,
+        postfix: " Mb"
+    });
+
+    $("#dom_subdom").ionRangeSlider({
+        skin: "round",
+        grid: true,
+        min: 0,
         max: 1000,
-        from: 550
+        from: 2,
+        step: 1
+    });
+    $('#ftp').ionRangeSlider({
+        skin: "round",
+        grid: true,
+        min: 0,
+        max: 100,
+        from: 2,
+        step: 1
+    });
+    $('#db').ionRangeSlider({
+        skin: "round",
+        grid: true,
+        min: 0,
+        max: 100,
+        from: 2,
+        step: 1
+    });
+    $('#emails').ionRangeSlider({
+        skin: "round",
+        grid: true,
+        min: 0,
+        max: 100,
+        from: 2,
+        step: 1
     });
 
     $("#range_03").ionRangeSlider({

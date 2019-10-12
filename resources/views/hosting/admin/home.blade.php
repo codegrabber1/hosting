@@ -22,7 +22,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="card widget_2 big_icon traffic">
                         <div class="body">
-                            <h6>Traffic</h6>
+                            <h6>Tariff</h6>
                             <h2>20 <small class="info">of 1Tb</small></h2>
                             <small>2% higher than last month</small>
                             <div class="progress">

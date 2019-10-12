@@ -23,6 +23,8 @@
 
     <link rel="stylesheet" href="{{ asset(env('THEME')) }}/admin/assets/plugins/summernote/dist/summernote.css"/>
     <link rel="stylesheet" href="{{ asset(env('THEME')) }}/admin/assets/plugins/bootstrap-select/css/bootstrap-select.css" />
+    <!-- Range Slider Css -->
+    <link rel="stylesheet" href="{{ asset(env('THEME')) }}/admin/assets/plugins/ion-rangeslider/css/ion.rangeSlider.css" />
     <link rel="stylesheet" href="{{ asset(env('THEME')) }}/admin/assets/plugins/dropify/css/dropify.min.css">
 
     <!-- Bootstrap Material Datetime Picker Css -->
@@ -323,7 +325,7 @@
                 </li>
                 <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-assignment"></i><span>Tariff plans</span></a>
                     <ul class="ml-menu">
-                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="{{ route('admin.tariff.prices.index') }}">Pricing</a></li>
                         <li><a href="file-documents.html">Documents</a></li>
 
                         <li><a href="events.html">Calendar of using hosting</a></li>
@@ -338,7 +340,7 @@
                 </li>
                 <li>
                     <div class="progress-container progress-primary m-t-10">
-                        <span class="progress-badge">Traffic this Month</span>
+                        <span class="progress-badge">Tariff this Month</span>
                         <div class="progress">
                             <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" style="width: 67%;">
                                 <span class="progress-value">67%</span>
@@ -457,7 +459,9 @@
     <!-- Bootstrap Material Datetime Picker Plugin Js -->
     <script src="{{ asset(env('THEME')) }}/admin/assets/plugins/momentjs/moment.js"></script> <!-- Moment Plugin Js -->
     <script src="{{ asset(env('THEME')) }}/admin/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="{{ asset(env('THEME')) }}/admin/assets/plugins/ion-rangeslider/js/ion.rangeSlider.js"></script> <!-- RangeSlider Plugin Js -->
     <script src="{{ asset(env('THEME')) }}/admin/assets/js/pages/forms/basic-form-elements.js"></script>
+    <script src="{{ asset(env('THEME')) }}/admin/assets/js/pages/ui/range-sliders.js"></script>
     <script src="{{ asset(env('THEME')) }}/admin/assets/bundles/mainscripts.bundle.js"></script>
     <script src="{{ asset(env('THEME')) }}/admin/assets/js/pages/forms/dropify.js"></script>
     <script src="{{ asset(env('THEME')) }}/admin/assets/js/pages/blog/blog.js"></script>

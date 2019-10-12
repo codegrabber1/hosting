@@ -14,7 +14,6 @@
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">
                     <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
-                    <a class="btn btn-success btn-icon float-right" href="{{ route('admin.blog.posts.create') }}"><i class="zmdi zmdi-hc-fw"></i></a>
                 </div>
             </div>
         </div>
@@ -42,7 +41,7 @@
                                                     <input id="title" name="title" type="text" class="form-control" placeholder="title"/>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="slug">Slung</label>
+                                                    <label for="slug">Slug</label>
                                                     <input id="slug" name="slug" type="text" class="form-control"  />
                                                 </div>
                                             </div>
@@ -60,7 +59,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="author">Author</label>
-                                                            <input type="text" id="author" name="user_id" class="form-control" value="{{ Auth::user()->id }}">
+                                                            <input type="text" id="author" name="user_id" class="form-control" value="{{ Auth::user()->name }}">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -125,7 +124,7 @@
                                     <a href="{{ route('admin.blog.posts.edit', $item->id) }}"><img src="{{ asset(env('THEME')).'/images/content/articles/'. $item->image }}" alt="blog thumbnail"></a>
                                     <div class="recentpost-content">
                                         <a href="{{ route('admin.blog.posts.edit', $item->id) }}">{{ $item->title }}</a>
-                                        <span> {{ \Carbon\Carbon::parse($item->created_at )->locale('uk')->isoFormat('M d, Y ')}}</span>
+                                        <span> {{ \Carbon\Carbon::parse($item->created_at )->locale('uk')->isoFormat('MMMM d, Y ')}}</span>
                                     </div>
                                 </li>
                                 @endforeach

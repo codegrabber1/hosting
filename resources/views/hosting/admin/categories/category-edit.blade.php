@@ -10,7 +10,6 @@
                     <h2>Edit blog Category</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}"><i class="zmdi zmdi-home"></i> Aero</a></li>
-{{--                        <li class="breadcrumb-item"><a href="{{ route('admin.blog.dashboard') }}">Blog</a></li>--}}
                         <li class="breadcrumb-item"><a href="{{ route('admin.blog.categories.index') }}">Categories</a></li>
                         <li class="breadcrumb-item active">Edit category</li>
                     </ul>
@@ -22,7 +21,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
@@ -50,17 +48,8 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <form action="{{ route('admin.blog.categories.store')  }}" method="post" name="upadate">
-                        @endif
+        @endif
                         @csrf
-                        @if($errors->any())
-                            <div class="alert alert-danger" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="zmdi zmdi-close"></i></span>
-                                </button>
-                                {{ $errors->first() }}
-                            </div>
-                        @endif
-
                         @if(session('success'))
                             <div class="alert alert-success">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -70,7 +59,6 @@
 
                             </div>
                         @endif
-
                         <div class="card">
                             <div class="body">
                                 <div class="form-group">
