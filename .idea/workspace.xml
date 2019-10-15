@@ -2,35 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b41f4b4-f330-44a3-830c-4afdd309aeb5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Repositories/admin/MenuRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/hosting/content.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/hosting/customMenuItems.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/hosting/pricing.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/hosting.lar.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hosting.lar.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Blog/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Blog/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Tariff/PricingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Tariff/PricingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Price.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Price.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Observers/BlogPostObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/BlogPostObserver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/admin/BaseRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/admin/BaseRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/admin/BlogPostRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/admin/BlogPostRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/admin/PriceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/admin/PriceRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_12_124019_create_prices_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_12_124019_create_prices_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/list.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/hosting/admin/posts/posts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hosting/admin/posts/posts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/hosting/admin/tariff/price-add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hosting/admin/tariff/price-add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/hosting/admin/tariff/price-edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/hosting/admin/tariff/prices.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hosting/admin/tariff/prices.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/hosting/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hosting/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/hosting/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hosting/layouts/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/hosting/layouts/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hosting/layouts/page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/hosting/topmenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hosting/topmenu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +86,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/hosting/content.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="212">
+                <state relative-caret-position="58">
                   <caret line="22" column="65" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
                 </state>
               </provider>
@@ -162,11 +135,20 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Repositories/admin/BlogPostRepository.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="236">
-                  <caret line="38" column="33" lean-forward="true" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+                <state relative-caret-position="153">
+                  <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="90">
+                  <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -241,7 +223,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/hosting/admin/posts/post-add.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/Traffic/TrafficController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/Traffic/PricingController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_10_12_113200_create_gifts_table.php" />
@@ -292,6 +273,7 @@
         <option value="$PROJECT_DIR$/app/Repositories/admin/BlogPostRepository.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
         <option value="$PROJECT_DIR$/resources/views/hosting/content.blade.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -617,12 +599,12 @@
       <workItem from="1570866979722" duration="33489000" />
       <workItem from="1570978824518" duration="8668000" />
       <workItem from="1571037670417" duration="2683000" />
-      <workItem from="1571118482185" duration="26628000" />
+      <workItem from="1571118482185" duration="27039000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257104000" />
+    <option name="totallyTimeSpent" value="257515000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -644,7 +626,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32961586" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.48426324" side_tool="true" weight="0.31846344" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.51573676" weight="0.40272614" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.51573676" visible="true" weight="0.40272614" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -659,13 +641,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/PriceCreateRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-96">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/BlogPost.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
@@ -1032,15 +1007,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/hosting/content.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
+        <state relative-caret-position="58">
           <caret line="22" column="65" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Repositories/admin/BlogPostRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="38" column="33" lean-forward="true" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+        <state relative-caret-position="153">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
         </state>
       </provider>
     </entry>
