@@ -20,10 +20,9 @@
                 </div>
             </div>
         </div>
-        @if($posts->exists)
+        @if($posts)
         <div class="container">
             <div class="row">
-
                 @foreach($posts as $post)
                 <div class="col-lg-6 col-md-12">
                     <div class="card">

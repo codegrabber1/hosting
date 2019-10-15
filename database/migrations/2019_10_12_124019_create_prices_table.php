@@ -22,7 +22,7 @@ class CreatePricesTable extends Migration
 
             $table->string('disc_space', 100);
             $table->string('panel');
-            $table->text('back-up');
+            $table->text('support');
             $table->string('php_versions', 100);
             $table->string('backup', 100);
             $table->string('val', 20)->nullable();

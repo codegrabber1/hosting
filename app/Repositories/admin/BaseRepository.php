@@ -32,4 +32,14 @@ abstract class BaseRepository {
        return clone $this->model;
    }
 
+    /**
+     * @return mixed
+     */
+   public function get()
+   {
+       $builder = $this->model->select('*');
+
+       return $builder->get();
+   }
+
 }

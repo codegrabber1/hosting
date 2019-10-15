@@ -21,8 +21,8 @@
         </div>
         <div class="container-fluid">
             <div class="row clearfix">
-                @if($prices->exists)
-                    @foreach($prices as $price)
+                @if($prices)
+                @foreach($prices as $price)
                 <div class="col-lg-4">
                     <div class="card pricing pricing-item">
                         <div class="pricing-deco l-blue">
@@ -32,30 +32,28 @@
                                 <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716&#x000A;	H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
                                 <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428&#x000A;	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
                             </svg>
-                            <div class="pricing-price"><span class="pricing-currency">$</span>19 <span class="pricing-period">/ mo</span>
+                            <div class="pricing-price"><span class="pricing-currency">$</span>{{ $price->price }} <span class="pricing-period">/ mo</span>
                             </div>
                             <h3 class="pricing-title">{{ $price->tariffname }}</h3>
                         </div>
                         <div class="body">
                             <ul class="feature-list list-unstyled">
-                                <li>5GB Disk Space</li>
-                                <li>10 Domain Names</li>
-                                <li>5 E-Mail Address</li>
-                                <li>Fully Support</li>
-                                <li><a href="" class="btn btn-primary">Edit plan</a></li>
+                                <li>{{ $price->disc_space }} Mb Disk Space</li>
+                                <li>{{ $price->dom_subdom }} Domain Names</li>
+                                <li>{{ $price->emails }} E-Mail Address</li>
+                                <li>{!! $price->support !!}</li>
+                                <li><a href="{{ route('admin.tariff.prices.edit', $price->id) }}" class="btn btn-primary">Edit plan</a></li>
                             </ul>
+                            @if($price->is_published)
+                                <p class="text-success">Published</p>
+                            @else
+                                <p class="text-danger">Unpublished</p>
+                            @endif
                         </div>
                     </div>
                 </div>
-                    @endforeach
-                @else
-                    <div class="col">
-                        <div class="alert alert-danger" role="alert">
-                            Create a plan
-                        </div>
-
-                    </div>
-                @endif
+                @endforeach
+    @endif
             </div>
         </div>
     </div>

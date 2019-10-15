@@ -57,7 +57,7 @@
                     <div class="container">
                         <div class="navbar-header logo-box">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="{{ route('main') }}">
                                     <img src="{{ asset(env('THEME')) }}/images/logo.png" class="logo-img" alt="">
                                 </a>
                             </div>
@@ -94,39 +94,8 @@
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
                                         </button>
-                                        <ul class="collapse navbar-collapse nav navbar-nav navbar-center">
-                                            <li class="parent megamenu four-columns">
-                                                <a href="{{ url('./') }}">Home</a>
+                                        @yield('topmenu')
 
-                                                <!-- .sub -->
-                                            </li>
-                                            <li class="parent">
-                                                <a href="portfolio-grid-3.html">Support</a>
-                                                <ul class="sub">
-                                                    <li class="parent">
-                                                        <a href="#">Grid</a>
-                                                        <a href="portfolio-grid-2.html">Working time</a>
-                                                        <a href="portfolio-grid-3.html">FAQ</a>
-                                                        <a href="portfolio-grid-4.html">4 Column</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="parent">
-                                                <a href="{{ url('blog') }}">Blog</a>
-
-                                            </li>
-                                            <li class="parent">
-                                                <a href="contact.html">Servers</a>
-                                            </li>
-                                            <li class="parent">
-                                                <a href="contact.html">Partnership</a>
-                                            </li>
-                                            <li class="parent">
-                                                <a href="contact.html">Contact</a>
-                                            </li>
-
-                                        </ul>
                                     </div>
                                 </div>
                                 <!-- .primary -->
@@ -166,7 +135,6 @@
             <div id="main">
                 @yield('slider')
                 @yield('pricing')
-                @yield('latest')
                 @yield('content')
                 @yield('sidebar')
             </div>

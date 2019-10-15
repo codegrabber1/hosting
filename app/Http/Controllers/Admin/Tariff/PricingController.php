@@ -7,6 +7,7 @@ use App\Models\Price;
 use App\Repositories\admin\PriceRepository;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Str;
 
 class PricingController extends TariffController
 {
@@ -33,7 +34,7 @@ class PricingController extends TariffController
     public function index()
     {
         //
-        $prices = $this->priceRepository->getShortPlansList(1);
+        $prices = $this->priceRepository->getShortPlansList(1,0);
 
         return view(env('THEME').'.admin.tariff.prices',
             compact('prices'));
@@ -48,8 +49,11 @@ class PricingController extends TariffController
     {
         //
         $item = new Price();
-        return view(env('THEME').'.admin.tariff.price-edit',
-            compact('item'));
+        $unpublished = $this->priceRepository->getPricesList(0);
+        $published = $this->priceRepository->getPricesList(1);
+
+        return view(env('THEME').'.admin.tariff.price-add',
+            compact('item', 'unpublished', 'published'));
     }
 
     /**
@@ -63,10 +67,15 @@ class PricingController extends TariffController
         //
         $data = $request->all();
 
+        if(empty($data['slug']))
+        {
+            $data['slug'] = Str::slug($data['tariffname']);
+        }
+
         $item = (new Price())->create($data);
 
         return $item ? redirect()
-            ->route('admin.tariff.prices.edit')
+            ->route('admin.tariff.prices.edit', $item->id)
             ->with(['success' => 'Price has been created successfully']) : back()
             ->withErrors(['msg' => 'Not stored'])
             ->withInput();
@@ -93,8 +102,13 @@ class PricingController extends TariffController
     {
         //
         $item = $this->priceRepository->getPriceEdit($id);
-        return view(env('THEME').'.admin.tariff.price-edit',
-            compact('item'));
+        //dd($item);
+        $unpublished = $this->priceRepository->getPricesList(0);
+        $published = $this->priceRepository->getPricesList(1);
+
+
+        return view(env('THEME').'.admin.tariff.price-add',
+            compact('item', 'unpublished', 'published'));
     }
 
     /**
@@ -107,6 +121,22 @@ class PricingController extends TariffController
     public function update(Request $request, $id)
     {
         //
+        $item = $this->priceRepository->getPriceEdit($id);
+
+        if(empty($item)){
+            return back()
+                ->withErrors(['msg' => "Post with id=[ {$id} ] not found."])
+                ->withInput();
+        }
+        $data = $request->all();
+
+        $result = $item->update($data);
+
+        return $result ? redirect()
+            ->route('admin.tariff.prices.edit', $item->id)
+            ->with(['success' => 'Updated successfully']) : back()
+            ->withErrors(['msg' => 'Not updated'])
+            ->withInput();
     }
 
     /**

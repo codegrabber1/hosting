@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('hosting/index');
-});
+Route::resource('/', 'IndexController', ['only'=>['index'],'names'=>['index'=>'main']]);
 Route::get('/blog', function () {
     return view('hosting/blog');
 });
@@ -22,7 +20,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Admin.Blog.
+/**
+ * Admin.
+ */
+
 $groupData = [
     'namespace' => 'Admin',
     'prefix' => 'admin',

@@ -17,6 +17,7 @@ class BlogPostObserver
     public function creating(BlogPost $blogPost)
     {
         //
+        $this->setSlug($blogPost);
     }
 
     /**
@@ -28,14 +29,6 @@ class BlogPostObserver
     public function updating(BlogPost $blogPost)
     {
         //
-//        $test[] = $blogPost->isDirty();
-//        $test[] = $blogPost->isDirty('is_published');
-//        $test[] = $blogPost->isDirty('user_id');
-//        $test[] = $blogPost->is_published;
-//        $test[] = $blogPost->getOriginal('is_published');
-//        dd($test);
-
-
         $this->setPublishedAt($blogPost);
 
         $this->setSlug($blogPost);
@@ -56,7 +49,7 @@ class BlogPostObserver
     }
 
     /**
-     * Set slug.
+     * Setting slug.
      * @param BlogPost $blogPost
      */
     protected function setSlug(BlogPost $blogPost)

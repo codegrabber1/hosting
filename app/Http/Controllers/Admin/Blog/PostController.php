@@ -82,7 +82,7 @@ class PostController extends BaseController
         }
 
         /**
-         * The controller hasn't creates or saves data in database.
+         * The controller hasn't create or saves data in database.
          */
         $item = (new BlogPost())->create($data);
 
@@ -186,6 +186,15 @@ class PostController extends BaseController
         //
 
         $result = BlogPost::destroy($id);
+
+        //if(file_exists(public_path($path, $item['image'])))
+//        {
+//            $im = unlink(public_path($path.$item['image']));
+//            //dd($im);
+//        }else{
+//
+//            //dd('doesn\'t exist');
+//        }
 
         return $result ? redirect()
             ->route('admin.blog.posts.index')

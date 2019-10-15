@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use App\Models\BlogCategory;
 use App\Models\BlogPost;
+use App\Models\Price;
 use App\Observers\BlogCategoryObserver;
 use App\Observers\BlogPostObserver;
+use App\Observers\TariffPriceObserver;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -33,5 +35,6 @@ class AppServiceProvider extends ServiceProvider
 
         BlogPost::observe(BlogPostObserver::class);
         BlogCategory::observe(BlogCategoryObserver::class);
+        Price::observe(TariffPriceObserver::class);
     }
 }

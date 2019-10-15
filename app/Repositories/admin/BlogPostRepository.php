@@ -27,7 +27,7 @@ class BlogPostRepository extends BaseRepository {
     public function getPostsList($perPage = null, $published = null, $unpublished = null)
     {
         $columns = [
-            'id', 'image', 'title', 'created_at', 'is_published'
+            'id', 'image', 'title', 'excerpt', 'created_at', 'user_id', 'is_published'
         ];
 
         $result = $this
@@ -37,6 +37,7 @@ class BlogPostRepository extends BaseRepository {
             ->where('is_published', $published)
             ->orWhere('is_published', $unpublished)
             ->paginate($perPage);
+
 
         return $result;
     }

@@ -5,9 +5,9 @@
             <div class="block-header">
                 <div class="row">
                     <div class="col-lg-7 col-md-6 col-sm-12">
-                        <h2>Add plan</h2>
+                        <h2>Edit the plan</h2>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Aero</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
                             <li class="breadcrumb-item"><a href="{{ route('admin.tariff.prices.index') }}">Prices</a></li>
                             <li class="breadcrumb-item active">Planing</li>
                         </ul>
@@ -17,6 +17,7 @@
                     <div class="col-lg-5 col-md-6 col-sm-12">
                         <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button">
                             <i class="zmdi zmdi-arrow-right"></i></button>
+                        <a class="btn btn-success btn-icon float-right" href="{{ route('admin.tariff.prices.create') }}"><i class="zmdi zmdi-hc-fw"></i></a>
                     </div>
                 </div>
             </div>
@@ -31,9 +32,9 @@
             <div class="block-header">
                 <div class="row">
                     <div class="col-lg-7 col-md-6 col-sm-12">
-                        <h2>Add plan</h2>
+                        <h2>Add a new plan</h2>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Aero</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
                             <li class="breadcrumb-item"><a href="{{ route('admin.tariff.prices.index') }}">Prices</a></li>
                             <li class="breadcrumb-item active">Planing</li>
                         </ul>
@@ -43,6 +44,7 @@
                     <div class="col-lg-5 col-md-6 col-sm-12">
                         <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button">
                             <i class="zmdi zmdi-arrow-right"></i></button>
+
                     </div>
                 </div>
             </div>
@@ -81,25 +83,25 @@
                                                             <label for="tariffname">Create the name of plan</label>
                                                             <input id="tariffname" name="tariffname" type="text"
                                                                    class="form-control"
-                                                                   value="{{ old('tariffname', $item->tariffname )}}"/>
+                                                                   value="{{ old('tariffname', $item->tariffname )}}" />
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="slug">Slug</label>
-                                                            <input id="slug" name="slug" type="text" class="form-control" placeholder="Here is a slug"/>
+                                                            <input id="slug" name="slug" type="text" class="form-control" value="{{ old('slug', $item->slug )}}" placeholder="Here is a slug"/>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12">
                                                         <div class="irs-demo">
                                                             <label for="price">Set a price</label>
-                                                            <input type="text" name="price" id="price" value="" />
+                                                            <input type="text" name="price" id="price" value="{{ old('price', $item->price )}}" />
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12">
                                                         <div class="irs-demo">
                                                             <label for="disc_space">Set a disc space</label>
-                                                            <input type="text" name="disc_space" id="disc_space" value="" />
+                                                            <input type="text" name="disc_space" id="disc_space" value="{{ old('disc_space', $item->disc_space )}}" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -109,37 +111,37 @@
                                                     <div class="col-lg-6">
                                                         <div class="irs-demo">
                                                             <label for="php_versions">Set PHP Versions</label>
-                                                            <input type="text" name="php_versions" id="php_versions" value="" />
+                                                            <input type="text" name="php_versions" id="php_versions" value="{{ old('php_versions', $item->php_versionsy) }}" />
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="irs-demo">
                                                             <label for="php_memory">Set PHP Memories</label>
-                                                            <input type="text" name="php_memory" id="php_memory" value="" />
+                                                            <input type="text" name="php_memory" id="php_memory" value="{{ old('php_memory', $item->php_memory) }}" />
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="irs-demo">
                                                             <label for="dom_subdom">Set the count of subdomains</label>
-                                                            <input type="text" name="dom_subdom" id="dom_subdom" value="" />
+                                                            <input type="text" name="dom_subdom" id="dom_subdom" value="{{ old('dom_subdom', $item->dom_subdom) }}" />
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="irs-demo">
                                                             <label for="ftp">Set the count of FTP</label>
-                                                            <input type="text" name="ftp" id="ftp" value="" />
+                                                            <input type="text" name="ftp" id="ftp" value="{{ old('ftp', $item->ftp) }}" />
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="irs-demo">
                                                             <label for="db">Set the count of DataBase</label>
-                                                            <input type="text" name="db" id="db" value="" />
+                                                            <input type="text" name="db" id="db" value="{{ old('db', $item->db) }}" />
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="irs-demo">
                                                             <label for="emails">Set the count of Emails</label>
-                                                            <input type="text" name="emails" id="emails" value="" />
+                                                            <input type="text" name="emails" id="emails" value="{{ old('emails', $item->emails) }}" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -149,19 +151,19 @@
                                                     <div class="col-lg-12">
                                                         <div class="form-group">
                                                             <label for="backup">Tell about the frequency of backups</label>
-                                                            <input id="backup" name="backup" type="text" class="form-control" placeholder="How often do you can do backups?"/>
+                                                            <input id="backup" name="backup" type="text" class="form-control" value="{{ old('backup', $item->backup) }}" placeholder="How often do you can do backups?"/>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12">
                                                         <div class="form-group">
                                                             <label for="panel">Management panel</label>
-                                                            <input id="panel" name="panel" type="text" class="form-control" placeholder="What panel do you propose?"/>
+                                                            <input id="panel" name="panel" type="text" class="form-control" value="{{ old('panel', $item->panel) }}" placeholder="What panel do you propose?"/>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12">
                                                         <div class="form-group">
                                                             <label for="support">Tell about your support</label>
-                                                            <textarea id="support" name="back-up" class="summernote"></textarea>
+                                                            <textarea id="support" name="support" class="summernote">{{ old('support', $item->support) }}</textarea>
                                                         </div>
                                                     </div>
 
@@ -171,7 +173,7 @@
                                                 <div class="row clearfix">
                                                     <div class="col">
                                                         <label for="messages">Add extra info to the user</label>
-                                                        <textarea id="messages" name="messages" class="summernote"></textarea>
+                                                        <textarea id="messages" name="messages" class="summernote">{{ old('messages', $item->messages) }}</textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -199,33 +201,42 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12">
+                    @if(isset($published))
                     <div class="card">
                         <div class="header">
-                            <h2><strong>All</strong> Plans</h2>
+                            <h2><strong>Published</strong> Plans</h2>
                         </div>
                         <div class="body">
                             <ul class="list-unstyled mb-0 widget-recentpost">
-                                    <li>
-                                        <div class="recentpost-content">
-                                            <a href="">Tariff name</a>
-
-                                        </div>
-                                    </li>
+                                @foreach($published as $item)
                                 <li>
                                     <div class="recentpost-content">
-                                        <a href="">Tariff name</a>
+                                        <a href="{{ route('admin.tariff.prices.edit', $item->id) }}">{{ $item->tariffname }}</a>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="recentpost-content">
-                                        <a href="">Tariff name</a>
-
-                                    </div>
-                                </li>
-
+                               @endforeach
                             </ul>
                         </div>
                     </div>
+                    @endif
+                        @if(isset($unpublished))
+                            <div class="card">
+                                <div class="header">
+                                    <h2><strong>Unpublished</strong> Plans</h2>
+                                </div>
+                                <div class="body">
+                                    <ul class="list-unstyled mb-0 widget-recentpost">
+                                        @foreach($unpublished as $item)
+                                            <li>
+                                                <div class="recentpost-content">
+                                                    <a href="{{ route('admin.tariff.prices.edit', $item->id) }}">{{ $item->tariffname }}</a>
+                                                </div>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+                        @endif
                     <div class="card">
                         <div class="header">
                             <h2><strong>Tag</strong> Clouds</h2>

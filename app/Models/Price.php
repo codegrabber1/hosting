@@ -12,7 +12,7 @@ class Price extends Model
 
     protected $fillable = [
         'tariffname','slug','disc_space','panel',
-        'back-up','php_versions','backup','val','messages',
+        'support','php_versions','backup','val','messages',
         'price','dom_subdom','ftp','db','emails','php_memory',
         'is_published'
     ];
