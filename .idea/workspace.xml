@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b41f4b4-f330-44a3-830c-4afdd309aeb5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/hosting/blog-header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/hosting/blog-post.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/hosting/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Blog/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Blog/BlogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Price.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Price.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/admin/PriceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/admin/PriceRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_12_124019_create_prices_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_12_124019_create_prices_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/list.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/hosting/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/hosting/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_posts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_posts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/settings.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/settings.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/typography.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/hosting/admin/posts/posts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hosting/admin/posts/posts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/hosting/blog-content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hosting/blog-content.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/hosting/blog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hosting/blog.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/hosting/content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hosting/content.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/hosting/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hosting/layouts/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/hosting/layouts/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hosting/layouts/page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/hosting/pricing.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hosting/pricing.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,8 +49,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Blog/BlogController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="606">
-                  <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+                <state relative-caret-position="24">
+                  <caret line="35" column="33" lean-forward="true" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
                   <folding>
                     <element signature="e#45#85#0#PHP" expanded="true" />
                   </folding>
@@ -569,12 +548,12 @@
       <workItem from="1570978824518" duration="8668000" />
       <workItem from="1571037670417" duration="2683000" />
       <workItem from="1571118482185" duration="27039000" />
-      <workItem from="1571321516989" duration="17399000" />
+      <workItem from="1571321516989" duration="17779000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278983000" />
+    <option name="totallyTimeSpent" value="279363000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -732,13 +711,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/hosting/blog-latest.blade.php" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Tariff/TariffController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -982,10 +954,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Blog/BlogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        <state relative-caret-position="24">
+          <caret line="35" column="33" lean-forward="true" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
           <folding>
             <element signature="e#45#85#0#PHP" expanded="true" />
           </folding>
