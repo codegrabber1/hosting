@@ -7,7 +7,7 @@
             <div class="col-sm-12 col-md-12">
                 <div class="title-box white text-center">
                     <!-- Heading -->
-                    <h2 class="title">Price List</h2>
+{{--                    <h2 class="title">Price List</h2>--}}
                 </div>
             </div>
         </div>
@@ -16,6 +16,11 @@
                 @foreach($pricing as $item)
                     <div class="col-sm-6 col-md-4 col-lg-3">
                         <div class="pricing" data-appear-animation="fadeInLeft">
+                            @if($item->gifts_id)
+                            <div class="ribbon-wrapper">
+                                <div class="ribbon yellow">{{ $item->gift()->name }}</div>
+                            </div>
+                            @endif
                             <!-- Title -->
                             <div class="title"><a href="#">{{ $item->tariffname }}</a></div>
                             <div class="price-box">
@@ -39,78 +44,6 @@
                     </div>
                 @endforeach
             @endif
-{{--            <div class="col-sm-6 col-md-4 col-lg-3">--}}
-{{--                <div class="pricing" data-appear-animation="fadeInUp">--}}
-{{--                    <!-- Title -->--}}
-{{--                    <div class="ribbon-wrapper">--}}
-{{--                        <div class="ribbon yellow">OFFER</div>--}}
-{{--                    </div>--}}
-{{--                    <div class="title"><a href="#">Standard</a></div>--}}
-{{--                    <div class="price-box">--}}
-{{--                        <!-- Price -->--}}
-{{--                        <div class="starting">Starting at</div>--}}
-{{--                        <div class="price">$99.9<span>/month</span></div>--}}
-{{--                    </div>--}}
-{{--                    <ul class="options">--}}
-{{--                        <!-- Item List -->--}}
-{{--                        <li>Wordpress</li>--}}
-{{--                        <li class="active">HTML5 & CSS 3</li>--}}
-{{--                        <li class="active">PSD Files</li>--}}
-{{--                        <li>Unlimited Support</li>--}}
-{{--                    </ul>--}}
-{{--                    <div class="bottom-box">--}}
-{{--                        <div class="clearfix"></div>--}}
-{{--                        <button class="btn btn-default btn-lg">Order Now</button>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <!-- .pricing -->--}}
-{{--            </div>--}}
-{{--            <div class="col-sm-6 col-md-4 col-lg-3">--}}
-{{--                <div class="pricing" data-appear-animation="fadeInUp">--}}
-{{--                    <!-- Title -->--}}
-{{--                    <div class="title"><a href="#">Advanced</a></div>--}}
-{{--                    <div class="price-box">--}}
-{{--                        <!-- Price -->--}}
-{{--                        <div class="starting">Starting at</div>--}}
-{{--                        <div class="price">$159.9<span>/month</span></div>--}}
-{{--                    </div>--}}
-{{--                    <ul class="options">--}}
-{{--                        <!-- Item List -->--}}
-{{--                        <li class="active">Wordpress</li>--}}
-{{--                        <li class="active">HTML5 & CSS 3</li>--}}
-{{--                        <li class="active">PSD Files</li>--}}
-{{--                        <li>Unlimited Support</li>--}}
-{{--                    </ul>--}}
-{{--                    <div class="bottom-box">--}}
-{{--                        <div class="clearfix"></div>--}}
-{{--                        <button class="btn btn-default btn-lg">Order Now</button>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <!-- .pricing -->--}}
-{{--            </div>--}}
-{{--            <div class="col-sm-6 col-md-4 col-lg-3">--}}
-{{--                <div class="pricing" data-appear-animation="fadeInRight">--}}
-{{--                    <!-- Title -->--}}
-{{--                    <div class="title"><a href="#">Premium</a></div>--}}
-{{--                    <div class="price-box">--}}
-{{--                        <!-- Price -->--}}
-{{--                        <div class="starting">Starting at</div>--}}
-{{--                        <div class="price">$199.9<span>/month</span></div>--}}
-{{--                    </div>--}}
-{{--                    <ul class="options">--}}
-{{--                        <!-- Item List -->--}}
-{{--                        <li class="active">Wordpress</li>--}}
-{{--                        <li class="active">HTML5 & CSS 3</li>--}}
-{{--                        <li class="active">PSD Files</li>--}}
-{{--                        <li class="active">Unlimited Support</li>--}}
-{{--                    </ul>--}}
-{{--                    <div class="bottom-box">--}}
-{{--                        <div class="clearfix"></div>--}}
-{{--                        <button class="btn btn-default btn-lg">Order Now</button>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <!-- .pricing -->--}}
-{{--            </div>--}}
         </div>
     </div>
 </section>

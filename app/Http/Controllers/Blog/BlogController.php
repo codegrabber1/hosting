@@ -2,10 +2,77 @@
 
 namespace App\Http\Controllers\Blog;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\MainController;
+use App\Repositories\admin\BlogPostRepository;
+use App\Repositories\admin\MenuRepository;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Support\Arr;
+use Illuminate\View\View;
 
-class BlogController extends Controller
+class BlogController extends MainController
 {
     //
+
+    /**
+     * BlogController constructor.
+     */
+    public function __construct()
+    {
+        $topMenu = app(MenuRepository::class);
+
+        parent::__construct($topMenu);
+
+        $this->blogPostRepository = app(BlogPostRepository::class);
+
+        $this->sidebar = true;
+        $this->template = env('THEME').'.blog';
+    }
+
+
+    /**
+     * Getting all articles.
+     * @throws \Throwable
+     */
+    public function getArticles()
+    {
+
+        $allPosts = $this->getPosts();
+
+        $header = view(env('THEME').'.blog-header')->with('posts', $allPosts)->render();
+        $content = view(env('THEME').'.blog-content')->with('posts', $allPosts)->render();
+
+        $this->vars = Arr::add($this->vars, 'header', $header);
+        $this->vars = Arr::add($this->vars, 'content', $content);
+
+
+        return $this->renderOut();
+
+    }
+
+    /**
+     * Getting an article.
+     * @param $id
+     * @return Factory|View
+     * @throws \Throwable
+     */
+    public function getArticle($id)
+    {
+        $post = $this->blogPostRepository->getPostEdit($id);
+
+        $header = view(env('THEME').'.blog-header')->with('post', $post)->render();
+        $content = view(env('THEME').'.blog-post')->with('post', $post)->render();
+
+        $this->vars = Arr::add($this->vars, 'header', $header);
+        $this->vars = Arr::add($this->vars, 'content',  $content);
+
+        return $this->renderOut();
+
+    }
+
+    private function getPosts()
+    {
+        $allPosts = $this->blogPostRepository->getPostsList(6,1);
+
+        return $allPosts;
+    }
 }

@@ -12,11 +12,19 @@
 */
 
 Route::resource('/', 'IndexController', ['only'=>['index'],'names'=>['index'=>'main']]);
-Route::get('/blog', function () {
-    return view('hosting/blog');
+$blogData = [
+    'namespace' => 'Blog'
+];
+
+Route::group($blogData, function(){
+    Route::get('/blog', 'BlogController@getArticles')->name('blog');
+    Route::get('/blog/{id}', 'BlogController@getArticle')->name('blog.post');
 });
 
-Auth::routes();
+
+Auth::routes($blogData, function(){
+
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 

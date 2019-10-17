@@ -53,35 +53,106 @@
         </div>
         <header class="header header-eight">
             <div class="header-wrapper">
-                @yield('topmenu')
+                <nav class="navbar">
+                    <div class="container">
+                        <div class="navbar-header logo-box">
+                            <div class="logo">
+                                <a href="{{ route('main') }}">
+                                    <img src="{{ asset(env('THEME')) }}/images/logo.png" class="logo-img" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- .logo-box -->
+                        <div class="navbar-right right-box">
+                            <div class="right-box-wrapper">
+                                <div class="header-icons">
+                                    <div class="share-header hidden-600">
+                                        <a href="#">
+                                            <i class="fa fa-share-alt"></i>
+                                        </a>
+                                    </div>
+                                    <!-- .search-header -->
+                                    <div class="search-header hidden-600">
+                                        <a href="#">
+                                            <i class="fa fa-search"></i>
+                                        </a>
+                                    </div>
+                                    <!-- .search-header -->
+                                    <div class="phone-header hidden-600">
+                                        <a href="#">
+                                            <i class="fa fa-mobile"></i>
+                                        </a>
+                                    </div>
+                                    <!-- .phone-header -->
+                                </div>
+                                <!-- .header-icons -->
+                                <div class="primary">
+                                    <div class="navbar navbar-default" role="navigation">
+                                        <button type="button" class="navbar-toggle btn-navbar collapsed" data-toggle="collapse" data-target=".primary .navbar-collapse">
+                                            <span class="text"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                        @yield('topmenu')
+                                    </div>
+                                </div>
+                                <!-- .primary -->
+                            </div>
+                        </div>
+                        <div class="phone-active col-sm-12 col-md-12">
+                            <a href="#" class="close"><span>close</span>×</a>
+                            <span class="title">Call Us</span> <strong>+0 (123) 456 78 90</strong>
+                        </div>
+                        <div class="search-active col-sm-12 col-md-12">
+                            <a href="#" class="close"><span>close</span>×</a>
+                            <form name="search-form" class="search-form">
+                                <input class="search-string form-control" type="search" placeholder="Enter Your Text & Search Here" name="search-string">
+                                <button class="search-submit">
+                                    <i class="fa  fa-search text-color"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="share-active col-sm-12 col-md-12">
+                            <a href="#" class="close"><span>close</span>×</a>
+                            <div class="header-social btn-icon">
+                                <a class="mistbtn mistbtn-circle mistbtn-icon-white mistbtn-icon-bg-transparent color-hover icon-facebook" href="#"></a>
+                                <a class="mistbtn mistbtn-circle mistbtn-icon-white mistbtn-icon-bg-transparent color-hover icon-twitter" href="#"></a>
+                                <a class="mistbtn mistbtn-circle mistbtn-icon-white mistbtn-icon-bg-transparent color-hover icon-google" href="#"></a>
+                                <a class="mistbtn mistbtn-circle mistbtn-icon-white mistbtn-icon-bg-transparent color-hover icon-pinterest" href="#"></a>
+                                <a class="mistbtn mistbtn-circle mistbtn-icon-white mistbtn-icon-bg-transparent color-hover icon-instagram" href="#"></a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
             </div>
 
             <!-- .header-wrapper -->
         </header>
         <!-- .header -->
-        <header class="page-header">
-            <div class="container">
-                <h1 class="title">Blog Grid 2 Column - Right Sidebar!!!</h1>
-            </div>
-            <div class="breadcrumb-box">
-                <div class="container">
-                    <ul class="breadcrumb">
-                        <li><a href="./">Home</a></li>
-                        <li>Blog</li>
-                        <li class="active">Blog Grid 2 Column - Right Sidebar</li>
-                    </ul>
-                </div>
-            </div><!-- .breadcrumb-box -->
-        </header>
+{{--        <header class="page-header">--}}
+{{--            <div class="container">--}}
+{{--                <h1 class="title">Blog Grid 2 Column - Right Sidebar!!!</h1>--}}
+{{--            </div>--}}
+{{--            <div class="breadcrumb-box">--}}
+{{--                <div class="container">--}}
+{{--                    <ul class="breadcrumb">--}}
+{{--                        <li><a href="./">Home</a></li>--}}
+{{--                        <li>Blog</li>--}}
+{{--                        <li class="active">Blog Grid 2 Column - Right Sidebar</li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--            </div><!-- .breadcrumb-box -->--}}
+{{--        </header>--}}
         <!-- .header -->
-        <section id="main">
+        <div id="main">
             <div class="container">
                 <div class="row">
                     @yield('content')
                     @yield('sidebar')
                 </div>
             </div>
-        </section>
+        </div>
         @yield('footer')
     </div><!-- .page-box-content -->
 

@@ -21,7 +21,7 @@ class IndexController extends MainController
         $this->priceRepository = app(PriceRepository::class);
         $this->blogPostRepository = app(BlogPostRepository::class);
 
-        $this->sidebar = true;
+
         $this->template = env('THEME').'.index';
     }
 
@@ -38,6 +38,7 @@ class IndexController extends MainController
          * Retrieving all plans.
          */
         $tariffItems = $this->getTariffs();
+
         $latest = $this->getLates();
 
         $pricing = view(env('THEME').'.pricing')->with(

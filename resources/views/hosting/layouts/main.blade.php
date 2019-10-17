@@ -44,7 +44,7 @@
         <title>{{ config('app.name') }}</title>
 
     </head>
-    <body class="fixed-header home">
+    <body class="fixed-header @if(url()->current() == route('main')) home @else '' @endif">
     <div class="page-box">
         <div class="page-box-content">
             <!-- Page Loader -->
@@ -95,7 +95,6 @@
                                             <span class="icon-bar"></span>
                                         </button>
                                         @yield('topmenu')
-
                                     </div>
                                 </div>
                                 <!-- .primary -->
@@ -131,13 +130,14 @@
         <!-- .header-wrapper -->
         </header>
         <!-- .header -->
+            @yield('header')
             <!-- .header -->
-            <div id="main">
+            <section id="main">
                 @yield('slider')
                 @yield('pricing')
                 @yield('content')
                 @yield('sidebar')
-            </div>
+            </section>
             @yield('footer')
         </div><!-- .page-box-content -->
 

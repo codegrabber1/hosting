@@ -32,7 +32,7 @@ class PriceRepository extends BaseRepository {
     public function getShortPlansList($published = null, $unpublished = null)
     {
         $columns = [
-            'id','tariffname','disc_space','price','dom_subdom','support','emails', 'is_published'
+            'id','tariffname', 'gifts_id','disc_space','price','dom_subdom','support','emails', 'is_published'
         ];
 
         $result =  $this

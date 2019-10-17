@@ -10,7 +10,7 @@
                 <ul class="latest-posts">
                     @foreach($latest as $item)
                     <li>
-                        <img class="image" src="{{ asset(env('THEME')).'/images/content/articles/'. $item->image }}" alt="{{ $item->title }}" title="" width="84" height="84">
+                        <img class="image" src="{{ asset(env('THEME')).'/images/content/articles/'. $item->image }}" alt="{{ $item->title }}" title="">
                         <div class="meta">
                             <!-- Author -->
                             <span>{{ $item->user->name }}</span>,
@@ -18,7 +18,7 @@
                             <span class="time">{{ \Carbon\Carbon::parse($item->created_at )->locale('uk')->isoFormat('dddd, d MMM Y, H:m:s') }}</span>
                         </div>
                         <div class="description">
-                            <a href="#">
+                            <a href="{{ route('blog.post', $item->id) }}">
                                 <!-- Text -->
                                 {!! Str::limit($item->excerpt, 200 )!!}
                             </a>

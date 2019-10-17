@@ -15,7 +15,7 @@ class CreatePricesTable extends Migration
     {
         Schema::create('prices', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('gifts_id')->unsigned()->nullable();
+            $table->integer('gifts_id')->unsigned();
 
             $table->string('tariffname', 70);
             $table->string('slug')->unique();
