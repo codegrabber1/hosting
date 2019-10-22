@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Blog;
 
+use App\Http\Controllers\Admin\BaseController;
 use App\Http\Requests\BlogPostCreateRequest;
 use App\Http\Requests\BlogPostUpdateRequest;
 use App\Models\BlogPost;

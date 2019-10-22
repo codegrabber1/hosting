@@ -29,46 +29,28 @@
             </ul>
         </nav>
     </aside><!-- .menu-->
+    @if($posts)
     <aside class="widget recent-post">
         <header>
             <h3 class="title">Recent Posts</h3>
         </header>
         <ul>
+            @foreach($posts as $post)
             <li class="clearfix">
                 <a href="#" class="post-image">
-                    <img src="img/content/blog/1.jpg" width="72" height="72" alt="" title="">
+                    <img src="{{ asset(env('THEME')).'/images/content/articles/'. $post->image }}" width="100%" height="72" alt="" title="">
                 </a>
                 <h3 class="post-name">
-                    <a href="#">10 / nov / 2014</a>
+                    <a href="#">{{ \Carbon\Carbon::parse($post->created_at )->locale('uk')->isoFormat('d MMM Y') }}</a>
                 </h3>
                 <div class="post-box">
-                    <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+                    <a href="#">{{ $post->title }}</a>
                 </div>
             </li>
-            <li class="clearfix">
-                <a href="#" class="post-image">
-                    <img src="img/content/blog/2.jpg" width="72" height="72" alt="" title="">
-                </a>
-                <h3 class="post-name">
-                    <a href="#">10 / Dec / 2014</a>
-                </h3>
-                <div class="post-box">
-                    <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
-                </div>
-            </li>
-            <li class="clearfix">
-                <a href="#" class="post-image">
-                    <img src="img/content/blog/3.jpg" width="72" height="72" alt="" title="">
-                </a>
-                <h3 class="post-name">
-                    <a href="#">15 / Dec / 2014</a>
-                </h3>
-                <div class="post-box">
-                    <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
-                </div>
-            </li>
+            @endforeach
         </ul>
     </aside><!-- .specials-->
+    @endif
     <aside class="widget banners no-style carousel-box" >
         <header>
             <a class="next" href="#"><i class="fa fa-angle-right"></i>
@@ -80,7 +62,7 @@
         <div class="carousel-pagination row">
             <div class="carousel">
                 <div class="slide col-sm-12 col-md-12">
-                    <img src="img/content/big-1.jpg" width="270" height="270" alt="">
+                    <img src="!img/content/big-1.jpg" width="270" height="270" alt="">
                 </div>
 
                 <div class="slide col-sm-12 col-md-12">
@@ -112,4 +94,7 @@
             <li><a href="#">travels</a></li>
         </ul>
     </aside><!-- .tags -->
+</div>
+
+</div>
 </div>

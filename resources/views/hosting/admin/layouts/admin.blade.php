@@ -295,11 +295,12 @@
                     </div>
                 </li>
                 <li class="active open"><a href="{{ route('home') }}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
-                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Settings</span></a>
+                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>App Settings</span></a>
                     <ul class="ml-menu">
+                        <li><a href="mail-inbox.html">Main Slider</a></li>
                         <li><a href="mail-inbox.html">Email</a></li>
                         <li><a href="chat.html">Chat Apps</a></li>
-                        <li><a href="events.html">Calendar</a></li>
+                        <li><a href="events.html">Top Menu</a></li>
                         <li><a href="contact.html">Contact info</a></li>
                         <li><a href="contact.html">Support</a></li>
                         <li><a href="contact.html">Partnership</a></li>

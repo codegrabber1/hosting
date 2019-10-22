@@ -138,9 +138,9 @@
                 @yield('content')
                 @yield('sidebar')
             </section>
-            @yield('footer')
-        </div><!-- .page-box-content -->
 
+        </div><!-- .page-box-content -->
+        @yield('footer')
     </div><!-- .page-box -->
     <!-- .page-box -->
     <div class="clearfix"></div>

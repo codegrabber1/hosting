@@ -31,5 +31,3 @@
         @endif
     </div><!-- .pagination-box -->
 </div>
-    </div>
-</div>

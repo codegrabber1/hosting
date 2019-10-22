@@ -39,7 +39,6 @@ abstract class MainController extends Controller
         $topMenu = view(env('THEME').'.topmenu')->with('menu', $menu)->render();
         $this->vars = Arr::add($this->vars, 'topmenu', $topMenu);
 
-
         return view($this->template)->with($this->vars);
     }
 

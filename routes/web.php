@@ -55,6 +55,10 @@ Route::group($groupData, function(){
     Route::resource('/tariff/gifts', 'Tariff\GiftController')
         ->only($methods)
         ->names('admin.tariff.gifts');
+
+    Route::resource('/settings/menu', 'Settings\MenuController')
+        ->only($methods)
+        ->names('admin.settings.menu');
 });
 
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Tariff;
+namespace App\Http\Controllers\Admin\Settings;
 
 use App\Http\Controllers\Admin\BaseController;
 use Illuminate\Http\Request;
 
-class GiftController extends BaseController
+class MenuController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class GiftController extends BaseController
     public function index()
     {
         //
-        return view(env('THEME').'.admin.tariff.gifts');
+
     }
 
     /**

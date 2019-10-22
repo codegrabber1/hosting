@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Admin\Blog;
 
+use App\Http\Controllers\Admin\BaseController;
 use App\Http\Requests\BlogCategoryCreateRequest;
 use App\Http\Requests\BlogCategoryUpdateRequest;
 use App\Models\BlogCategory;
 use App\Repositories\admin\BlogCategoryRepository;
 use Illuminate\Http\Response;
-use Illuminate\Support\Str;
 
 class CategoryController extends BaseController
 {

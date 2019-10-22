@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Tariff;
 
+use App\Http\Controllers\Admin\BaseController;
 use App\Http\Requests\PriceCreateRequest;
 use App\Models\Price;
 use App\Repositories\admin\PriceRepository;
@@ -9,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Str;
 
-class PricingController extends TariffController
+class PricingController extends BaseController
 {
     private $priceRepository;
 

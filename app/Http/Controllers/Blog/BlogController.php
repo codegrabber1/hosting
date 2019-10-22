@@ -24,8 +24,8 @@ class BlogController extends MainController
 
         $this->blogPostRepository = app(BlogPostRepository::class);
 
-        $this->sidebar = true;
-        $this->template = env('THEME').'.blog';
+
+        $this->template = env('THEME').'.blog/blog';
     }
 
 
@@ -38,11 +38,13 @@ class BlogController extends MainController
 
         $allPosts = $this->getPosts();
 
-        $header = view(env('THEME').'.blog-header')->with('posts', $allPosts)->render();
-        $content = view(env('THEME').'.blog-content')->with('posts', $allPosts)->render();
+        $header = view(env('THEME').'.blog/blog-header')->with('posts', $allPosts)->render();
+        $content = view(env('THEME').'.blog/blog-content')->with('posts', $allPosts)->render();
+        $sidebar = view(env('THEME').'.blog/sidebar')->with('posts', $allPosts)->render();
 
         $this->vars = Arr::add($this->vars, 'header', $header);
         $this->vars = Arr::add($this->vars, 'content', $content);
+        $this->vars = Arr::add($this->vars, 'sidebar', $sidebar);
 
 
         return $this->renderOut();
@@ -58,12 +60,15 @@ class BlogController extends MainController
     public function getArticle($id)
     {
         $post = $this->blogPostRepository->getPostEdit($id);
+        $allPosts = $this->getPosts();
 
-        $header = view(env('THEME').'.blog-header')->with('post', $post)->render();
-        $content = view(env('THEME').'.blog-post')->with('post', $post)->render();
+        $header = view(env('THEME').'.blog/blog-header')->with('post', $post)->render();
+        $content = view(env('THEME').'.blog/blog-post')->with('post', $post)->render();
+        $sidebar = view(env('THEME').'.blog/sidebar')->with('posts', $allPosts)->render();
 
         $this->vars = Arr::add($this->vars, 'header', $header);
         $this->vars = Arr::add($this->vars, 'content',  $content);
+        $this->vars = Arr::add($this->vars, 'sidebar', $sidebar);
 
         return $this->renderOut();
 
