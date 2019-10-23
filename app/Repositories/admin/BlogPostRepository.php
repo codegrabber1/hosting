@@ -38,7 +38,6 @@ class BlogPostRepository extends BaseRepository {
             ->orWhere('is_published', $unpublished)
             ->paginate($perPage);
 
-
         return $result;
     }
 

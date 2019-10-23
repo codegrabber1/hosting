@@ -16,11 +16,36 @@ class MenuRepository extends BaseRepository
 
     public function getMenuItems()
     {
-        $columns = [];
+        $columns = [
+            'id', 'title', 'slug', 'parent'
+        ];
 
         $result = $this
-            ->startCondition();
+            ->startCondition()
+            ->select($columns)
+            ->get();
 
         return $result;
+    }
+
+    public function getForSelect()
+    {
+        $columns = [
+            'id', 'title','parent'
+        ];
+
+        $result = $this
+            ->startCondition()
+            ->select($columns)
+            ->with(['parentItem:id,title'])
+            ->toBase()
+            ->get();
+
+        return $result;
+    }
+
+    public function getEdit($id)
+    {
+        return $this->startCondition()->find($id);
     }
 }

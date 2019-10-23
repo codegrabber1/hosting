@@ -15,10 +15,12 @@ class CreateTopMenusTable extends Migration
     {
         Schema::create('top_menus', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
+            $table->string('title')->unique();
             $table->string('slug')->unique();
-            $table->integer('parent');
+            $table->integer('parent')->unsigned()->default(0);
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

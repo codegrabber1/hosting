@@ -1,12 +1,10 @@
 @extends(env('THEME').'.admin.layouts.admin')
 @section('content')
-
     <div class="body_scroll">
         @if($item->exists)
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-
                     <h2>Edit blog Category</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}"><i class="zmdi zmdi-home"></i> Aero</a></li>

@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UsersTableSeeder::class);
         $this->call(BlogCategoriesTableSeeder::class);
+        $this->call(MenuItemTableSeeder::class);
         factory(BlogPost::class, 10)->create();
         factory(Gift::class, 10)->create();
     }

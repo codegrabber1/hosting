@@ -300,7 +300,7 @@
                         <li><a href="mail-inbox.html">Main Slider</a></li>
                         <li><a href="mail-inbox.html">Email</a></li>
                         <li><a href="chat.html">Chat Apps</a></li>
-                        <li><a href="events.html">Top Menu</a></li>
+                        <li><a href="{{ route('admin.settings.menu.index') }}">Top Menu</a></li>
                         <li><a href="contact.html">Contact info</a></li>
                         <li><a href="contact.html">Support</a></li>
                         <li><a href="contact.html">Partnership</a></li>

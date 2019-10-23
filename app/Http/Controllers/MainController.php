@@ -46,6 +46,7 @@ abstract class MainController extends Controller
     {
         $topmenu = $this->menuRepository->get();
 
+
         /**
          * Use menu package.
          * @package  https://github.com/codegrabber1/laravel-menu
@@ -58,7 +59,6 @@ abstract class MainController extends Controller
                     if($m->find($item->parent)) {
                         $m->find($item->parent)->add($item->title, $item->slug)->id($item->id);
                     }
-
                 }
             }
 

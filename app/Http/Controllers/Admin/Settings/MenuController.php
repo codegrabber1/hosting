@@ -3,10 +3,20 @@
 namespace App\Http\Controllers\Admin\Settings;
 
 use App\Http\Controllers\Admin\BaseController;
+use App\Models\TopMenu;
+use App\Repositories\admin\MenuRepository;
 use Illuminate\Http\Request;
 
 class MenuController extends BaseController
 {
+    protected $menuItem;
+
+    public function __construct()
+    {
+       parent::__construct();
+       $this->menuItem = app(MenuRepository::class);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +25,9 @@ class MenuController extends BaseController
     public function index()
     {
         //
+        $menu = $this->menuItem->getMenuItems();
+
+        return view(env('THEME').'.admin.settings.menu', compact('menu'));
 
     }
 
@@ -26,6 +39,11 @@ class MenuController extends BaseController
     public function create()
     {
         //
+        $item = new TopMenu();
+
+        $menuList = $this->menuItem->getForSelect();
+
+        return view(env('THEME').'.admin.settings.menu-edit', compact('item', 'menuList'));
     }
 
     /**
@@ -37,6 +55,15 @@ class MenuController extends BaseController
     public function store(Request $request)
     {
         //
+        $data = $request->input();
+
+        $item = (new TopMenu())->create($data);
+
+        return $item ? redirect()
+            ->route('admin.settings.menu.edit', [$item->id])
+            ->with(['success' => 'Menu item has ben created successfully']) : back()
+            ->withErrors(['msg' => 'Not updated'])
+            ->withInput();
     }
 
     /**
@@ -59,6 +86,12 @@ class MenuController extends BaseController
     public function edit($id)
     {
         //
+        $item = $this->menuItem->getEdit($id);
+
+        $menuList = $this->menuItem->getForSelect();
+
+        return view(env('THEME').'.admin.settings.menu-edit',
+        compact('item', 'menuList'));
     }
 
     /**
@@ -71,6 +104,22 @@ class MenuController extends BaseController
     public function update(Request $request, $id)
     {
         //
+        $item = $this->menuItem->getEdit($id);
+
+        if(empty($item)){
+            return back()
+                ->withErrors(['msg' => "Item with id=[{$id}] not found."])
+                ->withInput();
+        }
+
+        $data = $request->all();
+        $result = $item->update($data);
+
+        return $result ? redirect()
+            ->route('admin.settings.menu.edit', $item->id)
+            ->with(['success' => 'Updated successfully']) : back()
+            ->withErrors(['msg' => 'Not updated'])
+            ->withInput();
     }
 
     /**
@@ -82,5 +131,11 @@ class MenuController extends BaseController
     public function destroy($id)
     {
         //
+        $result  = TopMenu::destroy($id);
+
+        return $result ? redirect()
+            ->route('admin.settings.menu.index')
+            ->with(['success' => "Item with id-[$id] deleted successfully"]) : back()
+            ->withErrors(['msg' => 'Not deleted']);
     }
 }
