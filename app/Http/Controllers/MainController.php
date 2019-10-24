@@ -13,6 +13,7 @@ abstract class MainController extends Controller
     protected $menuRepository;
     protected $priceRepository;
     protected $blogPostRepository;
+    protected $sliderRepository;
 
     protected $template;
     protected $vars;

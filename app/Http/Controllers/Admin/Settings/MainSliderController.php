@@ -2,12 +2,27 @@
 
 namespace App\Http\Controllers\Admin\Settings;
 
+use App\Http\Controllers\Admin\BaseController;
 use App\Models\Slider;
+use App\Repositories\admin\BlogPostRepository;
+use App\Repositories\admin\SliderRepository;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class MainSliderController extends Controller
+class MainSliderController extends BaseController
 {
+    private $slidersRepository;
+    private $blogPostRepository;
+
+    /**
+     * MainSliderController constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->slidersRepository = app(SliderRepository::class);
+        $this->blogPostRepository = app(BlogPostRepository::class);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,10 +31,10 @@ class MainSliderController extends Controller
     public function index()
     {
         //
-        $items = Slider::all();
-        dd($items);
+        $items = $this->slidersRepository->getSlidesList(6, 1,0);
 
-        return ;
+
+        return view(env('THEME').'.admin.settings.slider', compact('items'));
     }
 
     /**
@@ -30,6 +45,13 @@ class MainSliderController extends Controller
     public function create()
     {
         //
+        $item = new Slider();
+        $unpublishedSlides = $this->slidersRepository->getSlidesList(6,0);
+        $publishedSlides = $this->slidersRepository->getSlidesList(6,1);
+        $resentPosts = $this->blogPostRepository->getPostsList(6, 1);
+
+        return view(env('THEME').'.admin.settings.slider-edit',
+            compact('item','unpublishedSlides', 'publishedSlides','resentPosts') );
     }
 
     /**
@@ -41,6 +63,26 @@ class MainSliderController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->all();
+
+        if(isset($data['image'])){
+            $name = $request->file('image');
+            $data['image'] = $name->getClientOriginalName();
+            $path = env('THEME').'/images/content/slider';
+            $request->image->move($path, $data['image']);
+
+        }
+        /**
+         * The controller hasn't create or saves data in database.
+         */
+        $item = (new Slider())->create($data);
+
+        return $item ? redirect()
+            ->route('admin.settings.slider.edit', [$item->id])
+            ->with(['success' => 'Slide has ben created successfully']) : back()
+            ->withErrors(['msg' => 'Not stored'])
+            ->withInput();
+
     }
 
     /**
@@ -63,6 +105,13 @@ class MainSliderController extends Controller
     public function edit($id)
     {
         //
+        $item = $this->slidersRepository->getEdit($id);
+        $unpublishedSlides = $this->slidersRepository->getSlidesList(6,0);
+        $publishedSlides = $this->slidersRepository->getSlidesList(6,1);
+        $resentPosts = $this->blogPostRepository->getPostsList(6, 1);
+
+        return view(env('THEME').'.admin.settings.slider-edit',
+            compact('item','unpublishedSlides','publishedSlides','resentPosts') );
     }
 
     /**
@@ -74,7 +123,31 @@ class MainSliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $item = $this->slidersRepository->getEdit($id);
+
+        if(empty($item)){
+            return back()
+                ->withErrors(['msg' => "Slide with id=[ {$id} ] not found."])
+                ->withInput();
+        }
+        $data = $request->all();
+
+        if(isset($data['image'])) {
+
+            $data['image'] = $request->file('image')->getClientOriginalName();
+            $path = env('THEME') . '/images/content/slider';
+            $request->image->move($path, $data['image']);
+        }
+            /**
+             * The controller hasn't creates or saves data in database.
+             */
+            $result = $item->update($data);
+
+            return $result ? redirect()
+                ->route('admin.settings.slider.edit', $item->id)
+                ->with(['success' => 'Updated successfully']) : back()
+                ->withErrors(['msg' => 'Not updated'])
+                ->withInput();
     }
 
     /**

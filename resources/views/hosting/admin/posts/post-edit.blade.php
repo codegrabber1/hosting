@@ -81,7 +81,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label for="author">Author</label>
-                                                        <input type="text" id="updated" name="updated" class="form-control" value="{{ $item->user->name }}">
+                                                        <input type="text" id="updated" name="user_id" class="form-control" value="{{ $item->user->name }}">
                                                     </div>
                                                 </div>
                                             </div>

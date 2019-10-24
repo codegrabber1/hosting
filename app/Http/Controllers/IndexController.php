@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Repositories\admin\BlogPostRepository;
 use App\Repositories\admin\MenuRepository;
 use App\Repositories\admin\PriceRepository;
+use App\Repositories\admin\SliderRepository;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Arr;
@@ -20,6 +21,7 @@ class IndexController extends MainController
 
         $this->priceRepository = app(PriceRepository::class);
         $this->blogPostRepository = app(BlogPostRepository::class);
+        $this->sliderRepository = app(SliderRepository::class);
 
 
         $this->template = env('THEME').'.index';
@@ -44,10 +46,15 @@ class IndexController extends MainController
         $pricing = view(env('THEME').'.pricing')->with(
             'pricing', $tariffItems)->render();
 
+        $sliders = $this->getSlides();
+
+        $slides = view(env('THEME').'.slides')->with('slides', $sliders)->render();
+
         $content = view(env('THEME').'.content')->with([
             'latest'=> $latest
         ]);
 
+        $this->vars = Arr::add($this->vars, 'slides', $slides);
         $this->vars = Arr::add($this->vars, 'content', $content);
         $this->vars = Arr::add($this->vars, 'pricing', $pricing);
 
@@ -76,6 +83,15 @@ class IndexController extends MainController
         $latest = $this->blogPostRepository->getPostsList(3,1);
 
         return $latest;
+    }
+
+    /**
+     *
+     */
+    public function getSlides()
+    {
+        $slides = $this->sliderRepository->getSlidesList(3,1);
+        return $slides;
     }
 
     /**
@@ -143,6 +159,8 @@ class IndexController extends MainController
     {
         //
     }
+
+
 
 
 }

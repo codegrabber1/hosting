@@ -9,6 +9,7 @@ use App\Models\BlogPost;
 use App\Repositories\admin\BlogCategoryRepository;
 use App\Repositories\admin\BlogPostRepository;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class PostController extends BaseController
@@ -66,7 +67,7 @@ class PostController extends BaseController
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param BlogPostCreateRequest $request
      * @return Response
      */
     public function store(BlogPostCreateRequest $request)
