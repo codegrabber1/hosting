@@ -13,7 +13,7 @@
                 </div>
                 <footer class="entry-meta">
                     <span class="autor-name">{{ $post->user->name }}</span>,
-                    <span class="time">{{ \Carbon\Carbon::parse($post->created_at )->locale('uk')->isoFormat('dddd, d MMM Y, H:m:s') }}</span>
+                    <span class="time">{{ \Carbon\Carbon::parse($post->created_at )->locale('uk')->isoFormat('D MMM Y, H:m:s') }}</span>
                     <span class="comments-link pull-right">
               <a href="#">3 comment(s)</a>
             </span>

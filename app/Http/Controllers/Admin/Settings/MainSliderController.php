@@ -158,6 +158,14 @@ class MainSliderController extends BaseController
      */
     public function destroy($id)
     {
-        //
+        /**
+         * Force Delete item.
+         */
+        $result  = $this->slidersRepository->getDelete($id);
+
+        return $result ? redirect()
+            ->route('admin.settings.slider.index')
+            ->with(['success' => "Slide with id - [$id] deleted up successfully"]) : back()
+            ->withErrors(['msg' => 'Not deleted']);
     }
 }

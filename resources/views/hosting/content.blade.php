@@ -15,7 +15,7 @@
                             <!-- Author -->
                             <span>{{ $item->user->name }}</span>,
                             <!-- Meta Date -->
-                            <span class="time">{{ \Carbon\Carbon::parse($item->created_at )->locale('uk')->isoFormat('dddd, d MMM Y, H:m:s') }}</span>
+                            <span class="time">{{ \Carbon\Carbon::parse($item->created_at )->locale('uk')->isoFormat('D MMM Y, H:m:s') }}</span>
                         </div>
                         <div class="description">
                             <a href="{{ route('blog.post', $item->id) }}">

@@ -21,6 +21,4 @@
     </div>
      @endforeach
 </section><!-- #home -->
-@else
-<p>add some slides</p>
 @endif
