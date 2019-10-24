@@ -130,12 +130,14 @@ class MenuController extends BaseController
      */
     public function destroy($id)
     {
-        //
-        $result  = TopMenu::destroy($id);
+        /**
+         * Force Delete item.
+         */
+        $result  = $this->menuItem->getDelete($id);
 
         return $result ? redirect()
             ->route('admin.settings.menu.index')
-            ->with(['success' => "Item with id-[$id] deleted successfully"]) : back()
+            ->with(['success' => "Item with id - [$id] deleted up successfully"]) : back()
             ->withErrors(['msg' => 'Not deleted']);
     }
 }

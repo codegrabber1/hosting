@@ -42,7 +42,7 @@
                                         <td>{{ $item->slug }}</td>
                                         <td>{{ $item->description }}</td>
                                         <td>{{ $item->parentTitle }}</td>
-                                        <td>{{ $item->updated_at }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($item->updated_at )->locale('uk')->isoFormat('dddd, D MMM Y, H:m:s') }}</td>
                                         <td>
                                             <a href="{{ route('admin.blog.categories.edit', $item->id) }}" class="btn btn-default waves-effect waves-float btn-sm waves-green"><i class="zmdi zmdi-edit"></i></a>
                                             <a href="javascript:void(0);" class="btn btn-default waves-effect waves-float btn-sm waves-red"><i class="zmdi zmdi-delete"></i></a>

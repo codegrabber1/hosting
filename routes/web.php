@@ -59,6 +59,10 @@ Route::group($groupData, function(){
     Route::resource('/settings/menu', 'Settings\MenuController')
         ->only($methods)
         ->names('admin.settings.menu');
+
+    Route::resource('/settings/slider', 'Settings\MainSliderController')
+        ->only($methods)
+        ->names('admin.settings.slider');
 });
 
 

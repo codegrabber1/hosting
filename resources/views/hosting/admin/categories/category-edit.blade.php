@@ -54,7 +54,6 @@
                                     <span aria-hidden="true"><i class="zmdi zmdi-close"></i></span>
                                 </button>
                                 {{ session()->get('success') }}
-
                             </div>
                         @endif
                         <div class="card">

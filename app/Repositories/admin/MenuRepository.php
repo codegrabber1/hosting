@@ -48,4 +48,9 @@ class MenuRepository extends BaseRepository
     {
         return $this->startCondition()->find($id);
     }
+
+    public function getDelete($id)
+    {
+        return $this->startCondition()->where('id', $id)->forceDelete();
+    }
 }

@@ -51,8 +51,8 @@
                                             <td>{{ $item->title }}</td>
                                             <td>{{ $item->slug }}</td>
                                             <td>{{ $item->parentTitle }}</td>
-                                            <td>{{ $item->created_at }}</td>
-                                            <td>{{ $item->updated_at }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($item->created_at )->locale('uk')->isoFormat('dddd, D MMM Y') }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($item->updated_at )->locale('uk')->isoFormat('dddd, D MMM Y, H:m:s') }}</td>
                                             <td>
                                                 <a href="{{ route('admin.settings.menu.edit', $item->id) }}" class="btn btn-default waves-effect waves-float btn-sm waves-green left"><i class="zmdi zmdi-edit"></i></a>
                                                 <form action="{{ route('admin.settings.menu.destroy', $item->id) }}" method="post">
