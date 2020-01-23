@@ -1,0 +1,131 @@
+.full-width-box .fwb-bg {
+  background-repeat: no-repeat;
+  background-position: center top;
+  -webkit-background-size: cover;
+  background-size: cover;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  z-index: 0;
+}
+.pricing{
+  background-color: #fff;
+  margin: 0 auto 10px;
+  max-width: 270px;
+  position: relative;
+  text-align: center;
+  padding-top: 20px;
+}
+.pricing:before {
+  background: #f7f7f7;
+  background: rgba(30,30,30,.06);
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.pricing .title {
+  line-height: 32px;
+  padding: 17px 20px 21px;
+  text-transform: uppercase;
+}
+.pricing .title a {
+  color: #1e1e1e;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 32px;
+  text-decoration: none;
+}
+.pricing .price-box {
+  font-size: 12px;
+  line-height: 1;
+  overflow: hidden;
+  padding: 0 20px 20px;
+}
+.pricing .options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pricing .options li {
+  border-top: 1px solid rgba(30,30,30,.1);
+  color: #999;
+  color: rgba(30,30,30,.4);
+  line-height: 22px;
+  padding: 13px 10px 13px 10px;
+  position: relative;
+}
+.pricing .options li.active {
+  color: #1e1e1e;
+}
+.pricing .price-box .price span {
+  font-size: 12px;
+  display: block;
+  margin-top: 10px;
+  color: #333333;
+  font-family: 'Arimo', sans-serif;
+}
+.pricing .price-box .price {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 13px 0 0;
+  font-family: Oswald,sans-serif;
+}
+.pricing .bottom-box {
+  border-top: 1px solid rgba(30,30,30,.1);
+  background: rgba(30,30,30,.05);
+  overflow: hidden;
+  padding: 19px 19px 20px;
+}
+.ribbon {
+  text-align: center;
+  font-size: 12px;
+  position: relative;
+  padding: 5px 0;
+  left: -5px;
+  top: 15px;
+  width: 120px;
+  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+.ribbon-wrapper {
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+}
+.ribbon.yellow {
+  background-color: #ffc400;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffc400), to(#eab505));
+  background-image: -webkit-linear-gradient(top, #ffc400, #eab505);
+  background-image: -moz-linear-gradient(top, #ffc400, #eab505);
+  background-image: -ms-linear-gradient(top, #ffc400, #eab505);
+  background-image: -o-linear-gradient(top, #ffc400, #eab505);
+}
+.ribbon:before {
+  left: 0;
+}
+.ribbon:before, .ribbon:after {
+  content: "";
+  border-top: 3px solid #6e8900;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  position: absolute;
+  bottom: -3px;
+}
+.ribbon:after {
+  right: 0;
+}

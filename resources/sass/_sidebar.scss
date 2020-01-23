@@ -1,0 +1,495 @@
+.sidebar {
+  font-size: 13px;
+}
+.sidebar .widget {
+  margin: 0 0 60px;
+}
+/* Recent Post */
+
+.sidebar .recent-post li {
+
+  padding: 24px 0;
+
+}
+
+.sidebar .recent-post li a,
+.sidebar .recent-post li {
+
+  color: #1e1e1e;
+
+  font-size: 13px;
+
+}
+
+.sidebar .recent-post li:first-child {
+
+  padding-top: 10px;
+
+}
+
+.sidebar .carousel-pagination {
+
+  padding-top: 10px;
+
+}
+
+.sidebar .widget.tags ul {
+
+  padding-top: 10px;
+
+}
+
+.sidebar .recent-post li:last-child {
+
+  padding-bottom: 0;
+
+}
+
+.sidebar .recent-post li + li {
+
+  border-top-width: 1px;
+
+}
+
+.sidebar .recent-post li .post-image {
+
+  background: #f7f7f7;
+
+  border: 1px solid #f5f5f5;
+
+  -webkit-border-radius: 0px;
+
+  -moz-border-radius: 0px;
+
+  border-radius: 0px;
+
+  float: left;
+
+  height: 74px;
+
+  margin: 0 15px 1px 0;
+
+  overflow: hidden;
+
+  width: 74px;
+
+}
+
+.sidebar .recent-post li .post-name {
+
+  font-size: 12px;
+
+  font-weight: normal;
+
+  line-height: 20px;
+
+  margin: 0 0 4px;
+
+  padding-left: 85px;
+
+}
+
+.sidebar .recent-post li .post-box {
+
+  font-size: 16px;
+
+  line-height: 22px;
+
+  padding-left: 85px;
+
+}
+/* Specials */
+
+.sidebar .specials li {
+
+  padding: 24px 0;
+
+}
+
+.sidebar .specials li:first-child {
+
+  padding-top: 0;
+
+}
+
+.sidebar .specials li:last-child {
+
+  padding-bottom: 0;
+
+}
+
+.sidebar .specials li + li {
+
+  border-top-width: 1px;
+
+}
+
+.sidebar .specials li .product-image {
+
+  background: #f7f7f7;
+
+  border: 1px solid #f5f5f5;
+
+  -webkit-border-radius: 0px;
+
+  -moz-border-radius: 0px;
+
+  border-radius: 0px;
+
+  float: left;
+
+  height: 74px;
+
+  margin: 0 15px 1px 0;
+
+  overflow: hidden;
+
+  width: 74px;
+
+}
+
+.sidebar .specials li .product-name {
+
+  font-size: 12px;
+
+  font-weight: normal;
+
+  line-height: 20px;
+
+  margin: 0 0 4px;
+
+  padding-left: 85px;
+
+}
+
+.sidebar .specials li .price-box {
+
+  font-size: 16px;
+
+  line-height: 22px;
+
+  padding-left: 85px;
+
+}
+
+.sidebar .specials li .rating-box {
+
+  margin: 3px 0 14px 85px;
+
+  overflow: hidden;
+
+}
+/* Tags */
+
+.sidebar .tags ul {
+
+  margin: 0;
+
+}
+
+.sidebar .tags li {
+
+  float: left;
+
+  margin: 0 3px 3px 0;
+
+}
+
+.sidebar .tags a {
+
+  background: #1e1e1e;
+
+  background: rgba(30, 30, 30, .7);
+
+  -webkit-border-radius: 2px;
+
+  -moz-border-radius: 2px;
+
+  border-radius: 2px;
+
+  color: #fff;
+
+  display: block;
+
+  font-size: 12px;
+
+  height: 24px;
+
+  line-height: 24px;
+
+  padding: 0 5px;
+
+  text-decoration: none;
+
+  -webkit-transition: all .2s linear;
+
+  transition: all .2s linear;
+
+}
+
+.sidebar .tags a:hover {
+
+  background: #1e1e1e;
+
+  -webkit-transition: all .2s linear;
+
+  transition: all .2s linear;
+
+}
+/* Recommended */
+
+.sidebar .banners {
+
+  overflow: hidden;
+
+}
+
+.sidebar .banners .slide {
+
+  float: left;
+
+  max-width: 270px;
+
+  margin-left: 15px;
+
+  margin-right: 15px;
+
+  padding-left: 0;
+
+  padding-right: 0;
+
+  position: relative;
+
+}
+
+.sidebar .banners .banner-text {
+
+  background: rgb(30, 30, 30);
+
+  background: rgba(30, 30, 30, .65);
+
+  bottom: 0;
+
+  color: #fff;
+
+  left: 0;
+
+  min-height: 58px;
+
+  padding: 20px;
+
+  position: absolute;
+
+  right: 0;
+
+  text-align: right;
+
+}
+
+.sidebar .banners .banner-text .title {
+
+  font-size: 20px;
+
+  margin: 0;
+
+}
+
+.sidebar .banners .banner-text p {
+
+  line-height: 18px;
+
+  margin: 0;
+
+}
+/* Menu */
+
+
+.sidebar .menu li {
+
+  margin: 0 0 3px;
+
+  position: relative;
+
+}
+
+.sidebar .menu li a {
+
+  color: #1e1e1e;
+
+  display: block;
+
+  padding: 9px 9px 9px 15px;
+
+  position: relative;
+
+  text-decoration: none;
+
+  -webkit-transition: all .2s linear;
+
+  transition: all .2s linear;
+
+}
+
+.sidebar .menu li a:hover {
+
+  -webkit-transition: all .2s linear;
+
+  transition: all .2s linear;
+
+}
+
+.sidebar .menu li.active > a {
+
+  -webkit-transition: all .2s linear;
+
+  transition: all .2s linear;
+
+}
+
+.sidebar .menu li.parent > a .open-sub {
+
+  bottom: 0;
+
+  display: block;
+
+  left: 0;
+
+  position: absolute;
+
+  top: 5px;
+
+  width: 100%;
+
+}
+.sidebar .menu li > a:before,
+.sidebar .menu li > a:after {
+
+  content: "\f105";
+
+  display: block;
+
+  font-family: FontAwesome;
+
+  left: 0;
+
+  position: absolute;
+
+  top: 10px;
+
+}
+
+.sidebar .menu li.parent > a .open-sub:after {
+
+  margin: 12px 0 0 15px;
+
+}
+
+.sidebar .menu li.parent.active > a .open-sub:before,
+.sidebar .menu li.parent.active > a .open-sub:after {
+
+  top: 0px;
+
+}
+
+.sidebar .menu li.parent.active > a .open-sub:after {
+
+  display: none;
+
+}
+
+.sidebar .menu .sub {
+
+  padding-left: 15px;
+
+}
+
+.sidebar .menu .sub li {
+
+  margin: 0;
+
+}
+
+.sidebar .menu .sub a {
+
+  background: none;
+
+  color: #7f7f7f;
+
+  margin: 0;
+
+}
+
+.sidebar .menu li.parent:hover .sub a {
+
+  color: #7f7f7f;
+
+}
+
+.sidebar .menu .sub a:before {
+
+  display: none;
+
+}
+
+.sidebar .menu .sub a:hover {
+
+}
+
+.sidebar .menu .sub .active > a {
+
+  background: none;
+
+  color: #000;
+
+}
+
+.sidebar .menu .sub .sub {
+
+  background: none;
+
+}
+
+.sidebar .menu .sub li.parent > a .open-sub {
+
+  left: 10px;
+
+}
+
+.sidebar .menu .sub li.parent > a .open-sub:before,
+.sidebar .menu .sub li.parent > a .open-sub:after {
+
+  background: #7f7f7f;
+
+  margin: 14px 0 0 22px;
+
+  width: 12px;
+
+}
+
+.sidebar .menu .sub li.parent > a .open-sub:after {
+
+  height: 12px;
+
+  margin: 9px 0 0 27px;
+
+  width: 2px;
+
+}
+
+.sidebar .menu li > a .item-icon {
+
+  left: 15px;
+
+  position: absolute;
+
+  top: 13px;
+
+}
+
+.sidebar .menu li:not(.active) > a .item-icon {
+
+  opacity: .5;
+
+  filter: alpha(opacity=50);
+
+}
